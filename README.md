@@ -31,7 +31,7 @@ This Docker container makes it easy to get an instance of PHP up and running.
 Based on [Official PHP Docker Image](https://hub.docker.com/_/php/) with additional extensions enabled for CMS use cases, e.g. [Drupal](https://drupal.org/), [WordPress](https://wordpress.org/) or [Matomo](https://matomo.org/):
 
 -   Handle `ENTRYPOINT` with [dumb-init](https://github.com/Yelp/dumb-init)
--   Enable additional standard PHP extensions
+-   Enable additional PHP extensions
     -   bcmath
     -   bz2
     -   calendar
@@ -65,7 +65,7 @@ Based on [Official PHP Docker Image](https://hub.docker.com/_/php/) with additio
     -   xmlrpc
     -   xsl
     -   zip
--   Enable additional standard PECL extensions
+-   Enable additional PECL extensions
     -   apcu
     -   apcu\_bc
     -   geoip
