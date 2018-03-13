@@ -14,11 +14,65 @@ Supported Tags and Respective `Dockerfile` Links
 ------------------------------------------------
 
 -   [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-php/blob/master/Dockerfile)
+-   [`7.2-cli` (7.2.x-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.2.x-cli/Dockerfile)
+-   [`7.2-fpm` (7.2.x-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.2.x-fpm/Dockerfile)
+-   [`7.1-cli` (7.1.x-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.1.x-cli/Dockerfile)
+-   [`7.1-fpm` (7.1.x-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.1.x-fpm/Dockerfile)
+-   [`7.0-cli` (7.0.x-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.0.x-cli/Dockerfile)
+-   [`7.0-fpm` (7.0.x-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.0.x-fpm/Dockerfile)
+-   [`5.6-cli` (5.6.x-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/5.6.x-cli/Dockerfile)
+-   [`5.6-fpm` (5.6.x-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/5.6.x-fpm/Dockerfile)
 
 Overview
 --------
 
 This Docker container makes it easy to get an instance of PHP up and running.
+
+Based on [Official PHP Docker Image](https://hub.docker.com/_/php/) with additional extensions enabled for CMS use cases, e.g. [Drupal](https://drupal.org/), [WordPress](https://wordpress.org/) or [Matomo](https://matomo.org/):
+
+-   Handle `ENTRYPOINT` with [dumb-init](https://github.com/Yelp/dumb-init)
+-   Enable additional standard PHP extensions
+    -   bcmath
+    -   bz2
+    -   calendar
+    -   exif
+    -   gd
+    -   gettext
+    -   iconv
+    -   imap
+    -   intl
+    -   json
+    -   ldap
+    -   mbstring
+    -   mysqli
+    -   opcache
+    -   pcntl
+    -   pdo
+    -   pdo\_mysql
+    -   pdo\_pgsql
+    -   pdo\_sqlite
+    -   pgsql
+    -   shmop
+    -   simplexml
+    -   soap
+    -   sockets
+    -   sysvmsg
+    -   sysvsem
+    -   sysvshm
+    -   tidy
+    -   wddx
+    -   xml
+    -   xmlrpc
+    -   xsl
+    -   zip
+-   Enable additional standard PECL extensions
+    -   apcu
+    -   apcu\_bc
+    -   geoip
+    -   memcached
+    -   redis
+    -   uuid
+-   Install [GeoLite Legacy City Database](https://dev.maxmind.com/geoip/legacy/geolite/)
 
 ### Quick Start
 
