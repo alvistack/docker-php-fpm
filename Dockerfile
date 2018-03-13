@@ -15,6 +15,7 @@
 FROM php:7.1-cli
 
 ENTRYPOINT [ "/usr/local/bin/dumb-init", "--" ]
+CMD        [ "php", "-a" ]
 
 # Prepare APT depedencies
 RUN set -ex \
