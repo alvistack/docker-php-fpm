@@ -37,7 +37,7 @@ RUN set -ex \
 # Install GD
 RUN set -ex \
     && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y libfreetype6-dev libjpeg-dev libjpeg62-turbo-dev libpng-dev libpng12-dev \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y libfreetype6-dev libjpeg-dev libpng-dev \
     && rm -rf /var/lib/apt/lists/* \
     && docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ --with-freetype-dir=/usr/include/ \
     && docker-php-ext-install -j "$(nproc)" gd
