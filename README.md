@@ -31,7 +31,8 @@ This Docker container makes it easy to get an instance of PHP up and running.
 Based on [Official PHP Docker Image](https://hub.docker.com/_/php/) with additional extensions enabled for CMS use cases, e.g. [Drupal](https://drupal.org/), [WordPress](https://wordpress.org/) or [Matomo](https://matomo.org/):
 
 -   Handle `ENTRYPOINT` with [dumb-init](https://github.com/Yelp/dumb-init)
--   Enable additional PHP extensions
+-   Embed with [GeoLite Legacy City Database](https://dev.maxmind.com/geoip/legacy/geolite/)
+-   Additional PHP extensions:
     -   bcmath
     -   bz2
     -   calendar
@@ -65,14 +66,13 @@ Based on [Official PHP Docker Image](https://hub.docker.com/_/php/) with additio
     -   xmlrpc
     -   xsl
     -   zip
--   Enable additional PECL extensions
+-   Additional PECL extensions:
     -   apcu
     -   apcu\_bc
     -   geoip
     -   memcached
     -   redis
     -   uuid
--   Install [GeoLite Legacy City Database](https://dev.maxmind.com/geoip/legacy/geolite/)
 
 ### Quick Start
 
