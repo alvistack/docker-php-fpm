@@ -14,14 +14,14 @@ Supported Tags and Respective `Dockerfile` Links
 ------------------------------------------------
 
 -   [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-php/blob/master/Dockerfile)
--   [`7.2-cli` (7.2.x-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.2.x-cli/Dockerfile)
--   [`7.2-fpm` (7.2.x-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.2.x-fpm/Dockerfile)
--   [`7.1-cli` (7.1.x-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.1.x-cli/Dockerfile)
--   [`7.1-fpm` (7.1.x-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.1.x-fpm/Dockerfile)
--   [`7.0-cli` (7.0.x-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.0.x-cli/Dockerfile)
--   [`7.0-fpm` (7.0.x-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.0.x-fpm/Dockerfile)
--   [`5.6-cli` (5.6.x-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/5.6.x-cli/Dockerfile)
--   [`5.6-fpm` (5.6.x-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/5.6.x-fpm/Dockerfile)
+-   [`7.2-cli` (7.2-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.2-cli/Dockerfile)
+-   [`7.2-fpm` (7.2-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.2-fpm/Dockerfile)
+-   [`7.1-cli` (7.1-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.1-cli/Dockerfile)
+-   [`7.1-fpm` (7.1-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.1-fpm/Dockerfile)
+-   [`7.0-cli` (7.0-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.0-cli/Dockerfile)
+-   [`7.0-fpm` (7.0-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.0-fpm/Dockerfile)
+-   [`5.6-cli` (5.6-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/5.6-cli/Dockerfile)
+-   [`5.6-fpm` (5.6-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/5.6-fpm/Dockerfile)
 
 Overview
 --------
