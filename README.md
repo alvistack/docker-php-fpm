@@ -40,7 +40,6 @@ Based on [Official PHP Docker Image](https://hub.docker.com/_/php/) with additio
     -   gd
     -   gettext
     -   iconv
-    -   imagick
     -   imap
     -   intl
     -   json
@@ -49,7 +48,6 @@ Based on [Official PHP Docker Image](https://hub.docker.com/_/php/) with additio
     -   mysqli
     -   opcache
     -   pcntl
-    -   pdo
     -   pdo\_mysql
     -   pdo\_pgsql
     -   pdo\_sqlite
@@ -71,6 +69,7 @@ Based on [Official PHP Docker Image](https://hub.docker.com/_/php/) with additio
     -   apcu
     -   apcu\_bc
     -   geoip
+    -   imagick
     -   memcached
     -   redis
     -   uuid
