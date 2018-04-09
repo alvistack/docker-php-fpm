@@ -20,7 +20,7 @@ CMD        [ "php", "-a" ]
 # Prepare APT depedencies
 RUN set -ex \
     && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y automake build-essential curl libtool patch \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y automake bison build-essential curl libtool patch \
     && rm -rf /var/lib/apt/lists/*
 
 # Install dumb-init
