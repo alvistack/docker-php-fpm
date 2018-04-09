@@ -40,6 +40,7 @@ Based on [Official PHP Docker Image](https://hub.docker.com/_/php/) with additio
     -   gd
     -   gettext
     -   iconv
+    -   imagick
     -   imap
     -   intl
     -   json

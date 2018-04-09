@@ -62,14 +62,14 @@ RUN set -ex \
 # Install standard PECL extensions
 RUN set -ex \
     && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y libmemcached-dev uuid-dev \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y libmagickwand-dev libmemcached-dev uuid-dev \
     && rm -rf /var/lib/apt/lists/* \
-    && pecl install -f memcached redis uuid \
-    && docker-php-ext-enable memcached.so redis.so uuid.so
+    && pecl install -f imagick memcached redis uuid \
+    && docker-php-ext-enable imagick.so memcached.so redis.so uuid.so
 
 # Install APCu
 RUN set -ex \
-    && pecl install -f apcu apcu_bc-beta \
+    && pecl install -f apcu apcu_bc \
     && docker-php-ext-enable apcu.so \
     && docker-php-ext-enable apc.so --ini-name docker-php-ext-apcu_bc.ini
 
@@ -80,7 +80,7 @@ RUN set -ex \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /usr/local/share/GeoIP \
     && curl -sL http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz | gunzip > /usr/local/share/GeoIP/GeoIPCity.dat \
-    && pecl install -f geoip-beta \
+    && pecl install -f geoip-1.1.1 \
     && docker-php-ext-enable geoip.so
 
 # Copy files
