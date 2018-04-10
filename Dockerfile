@@ -62,7 +62,7 @@ RUN set -ex \
 # Install standard PECL extensions
 RUN set -ex \
     && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y libmagickwand-dev libmemcached-dev uuid-dev \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y imagemagick libmagickwand-dev libmemcached-dev uuid-dev \
     && rm -rf /var/lib/apt/lists/* \
     && pecl install -f imagick memcached redis uuid \
     && docker-php-ext-enable imagick.so memcached.so redis.so uuid.so
