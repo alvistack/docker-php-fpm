@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM php:7.1-cli
+FROM php:7.2-cli
 
 ENTRYPOINT [ "dumb-init", "--" ]
 CMD        [ "php", "-a" ]
@@ -25,7 +25,7 @@ RUN set -ex \
 
 # Install dumb-init
 RUN set -ex \
-    && curl -skL https://github.com/Yelp/dumb-init/releases/download/v1.2.1/dumb-init_1.2.1_amd64 > /usr/local/bin/dumb-init \
+    && curl -skL https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 > /usr/local/bin/dumb-init \
     && chmod 0755 /usr/local/bin/dumb-init
 
 # Install standard PHP extensions
