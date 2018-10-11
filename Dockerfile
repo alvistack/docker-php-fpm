@@ -79,7 +79,7 @@ RUN set -ex \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y libgeoip-dev \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /usr/local/share/GeoIP \
-    && curl -sL http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz | gunzip > /usr/local/share/GeoIP/GeoIPCity.dat \
+    && curl -skL http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz | gunzip > /usr/local/share/GeoIP/GeoIPCity.dat \
     && pecl install -f geoip-1.1.1 \
     && docker-php-ext-enable geoip.so
 
