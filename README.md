@@ -79,7 +79,7 @@ Start PHP:
 
     # Pull latest image
     docker pull alvistack/php
-
+    
     # Run with built-in web server
     docker run \
         -itd \
