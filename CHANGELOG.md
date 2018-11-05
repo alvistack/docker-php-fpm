@@ -2,6 +2,8 @@
 
 ## 7.2.x-0alvistack1 - TBC
 
+  - Enable mysql extension for PHP 5.6
+
 ## 7.2.11-0alvistack1 - 2018-10-29
 
   - Upgrade Docker base image to php:7.2-cli
