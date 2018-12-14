@@ -31,7 +31,7 @@ RUN set -ex \
 # Install standard PHP extensions
 RUN set -ex \
     && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y libbz2-dev libicu-dev libmariadbclient-dev-compat libpq-dev libsqlite3-dev libtidy-dev libxml2-dev libxslt1-dev \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y libbz2-dev libicu-dev libmariadbclient-dev-compat libpq-dev libsqlite3-dev libtidy-dev libxml2-dev libxslt1-dev libzip-dev \
     && rm -rf /var/lib/apt/lists/* \
     && docker-php-ext-install -j "$(nproc)" bcmath bz2 calendar exif gettext iconv intl json mbstring mysqli opcache pcntl pdo_mysql pdo_pgsql pdo_sqlite pgsql shmop simplexml soap sockets sysvmsg sysvsem sysvshm tidy wddx xml xmlrpc xsl zip
 
@@ -62,10 +62,10 @@ RUN set -ex \
 # Install standard PECL extensions
 RUN set -ex \
     && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y imagemagick libmagickwand-dev libmemcached-dev uuid-dev \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y imagemagick libmagickwand-dev uuid-dev \
     && rm -rf /var/lib/apt/lists/* \
-    && pecl install -f imagick memcached redis uuid \
-    && docker-php-ext-enable imagick.so memcached.so redis.so uuid.so
+    && pecl install -f imagick redis uuid \
+    && docker-php-ext-enable imagick.so redis.so uuid.so
 
 # Install APCu
 RUN set -ex \
@@ -82,6 +82,14 @@ RUN set -ex \
     && curl -skL http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz | gunzip > /usr/local/share/GeoIP/GeoIPCity.dat \
     && pecl install -f geoip-1.1.1 \
     && docker-php-ext-enable geoip.so
+
+# Install memcached
+RUN set -ex \
+    && apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y libmemcached-dev \
+    && rm -rf /var/lib/apt/lists/* \
+    && pecl install -f https://github.com/php-memcached-dev/php-memcached/archive/master.tar.gz \
+    && docker-php-ext-enable memcached.so
 
 # Copy files
 COPY files /
