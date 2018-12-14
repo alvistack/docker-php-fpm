@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM php:7.2-cli
+FROM php:7.3-cli
 
 ENTRYPOINT [ "dumb-init", "--" ]
 CMD        [ "php", "-a" ]
