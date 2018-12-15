@@ -1,10 +1,26 @@
 # Docker Image Packaging for PHP
 
-## 7.2.x-0alvistack1 - TBC
+## 7.3.x-0alvistack1 - TBC
 
-  - Enable mysql extension for PHP 5.6
+### Major Changes
+
+## 7.3.0-0alvistack2 - 2018-12-15
+
+### Major Changes
+
+  - Add PHP 7.3 support
+
+### PHP \>= 7.0
+
+  - Install memcached from master (<https://github.com/php-memcached-dev/php-memcached/issues/408>)
+
+### PHP 5.6
+
+  - Enable mysql extension
 
 ## 7.2.11-0alvistack1 - 2018-10-29
+
+### Major Changes
 
   - Upgrade Docker base image to php:7.2-cli
   - Update dumb-init to v.1.2.2

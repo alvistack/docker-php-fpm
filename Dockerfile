@@ -92,7 +92,7 @@ RUN set -ex \
     && curl -skL https://github.com/php-memcached-dev/php-memcached/archive/master.tar.gz | tar zxf - --strip-components 1 -C $MEMCACHED \
     && docker-php-ext-configure $MEMCACHED \
     && docker-php-ext-install $MEMCACHED \
-    && rm -r $MEMCACHED
+    && rm -rf $MEMCACHED
 
 # Copy files
 COPY files /
