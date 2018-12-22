@@ -88,7 +88,7 @@ RUN set -ex \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y libmemcached-dev \
     && rm -rf /var/lib/apt/lists/* \
-    && pecl install -f memcached \
+    && pecl install -f memcached --enable-memcached-protocol=no \
     && docker-php-ext-enable memcached.so
 
 # Copy files
