@@ -44,6 +44,7 @@ Based on [Official PHP Docker Image](https://hub.docker.com/_/php/) with additio
       - json
       - ldap
       - mbstring
+      - mysql
       - mysqli
       - opcache
       - pcntl
