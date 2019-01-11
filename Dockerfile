@@ -33,7 +33,13 @@ RUN set -ex \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y libbz2-dev libicu-dev libmariadbclient-dev-compat libpq-dev libsqlite3-dev libtidy-dev libxml2-dev libxslt1-dev libzip-dev \
     && rm -rf /var/lib/apt/lists/* \
-    && docker-php-ext-install -j "$(nproc)" bcmath bz2 calendar exif gettext iconv intl json mbstring mysqli opcache pcntl pdo_mysql pdo_pgsql pdo_sqlite pgsql shmop simplexml soap sockets sysvmsg sysvsem sysvshm tidy wddx xml xmlrpc xsl zip
+    && docker-php-ext-install -j "$(nproc)" bcmath bz2 calendar exif gettext iconv intl json mbstring mysqli pcntl pdo_mysql pdo_pgsql pdo_sqlite pgsql shmop simplexml soap sockets sysvmsg sysvsem sysvshm tidy wddx xml xmlrpc xsl zip
+
+# Install opcache
+RUN set -ex \
+    && docker-php-ext-configure opcache --enable-opcache \
+    && docker-php-ext-install -j "$(nproc)" opcache \
+    && docker-php-ext-enable opcache
 
 # Install GD
 RUN set -ex \
@@ -65,13 +71,13 @@ RUN set -ex \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y imagemagick libmagickwand-dev uuid-dev \
     && rm -rf /var/lib/apt/lists/* \
     && pecl install -f imagick redis uuid \
-    && docker-php-ext-enable imagick.so redis.so uuid.so
+    && docker-php-ext-enable imagick redis uuid
 
 # Install APCu
 RUN set -ex \
     && pecl install -f apcu apcu_bc \
-    && docker-php-ext-enable apcu.so \
-    && docker-php-ext-enable apc.so --ini-name docker-php-ext-apcu_bc.ini
+    && docker-php-ext-enable apcu \
+    && docker-php-ext-enable apc --ini-name docker-php-ext-apcu_bc.ini
 
 # Install memcached
 RUN set -ex \
@@ -79,7 +85,7 @@ RUN set -ex \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y libmemcached-dev \
     && rm -rf /var/lib/apt/lists/* \
     && pecl install -f memcached \
-    && docker-php-ext-enable memcached.so
+    && docker-php-ext-enable memcached
 
 # Install GeoIP2
 RUN set -ex \
