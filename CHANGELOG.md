@@ -4,6 +4,9 @@
 
 ### Major Changes
 
+  - Upgrade memcached.so for PHP 7.3 (https://github.com/php-memcached-dev/php-memcached/issues/408)
+  - Upgrade to GeoLite2 (https://support.maxmind.com/geolite-legacy-discontinuation-notice/)
+
 ## 7.3.0-0alvistack2 - 2018-12-15
 
 ### Major Changes

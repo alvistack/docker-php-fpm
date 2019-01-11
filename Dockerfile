@@ -73,16 +73,6 @@ RUN set -ex \
     && docker-php-ext-enable apcu.so \
     && docker-php-ext-enable apc.so --ini-name docker-php-ext-apcu_bc.ini
 
-# Install GeoIP Legacy
-RUN set -ex \
-    && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y libgeoip-dev \
-    && rm -rf /var/lib/apt/lists/* \
-    && mkdir -p /usr/local/share/GeoIP \
-    && curl -skL http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz | gunzip > /usr/local/share/GeoIP/GeoIPCity.dat \
-    && pecl install -f geoip-1.1.1 \
-    && docker-php-ext-enable geoip.so
-
 # Install memcached
 RUN set -ex \
     && apt-get update \
@@ -90,6 +80,19 @@ RUN set -ex \
     && rm -rf /var/lib/apt/lists/* \
     && pecl install -f memcached \
     && docker-php-ext-enable memcached.so
+
+# Install GeoIP2
+RUN set -ex \
+    && apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y libmaxminddb-dev \
+    && rm -rf /var/lib/apt/lists/* \
+    && MAXMINDDB="`mktemp -d`" \
+    && curl -skL https://github.com/maxmind/MaxMind-DB-Reader-php/archive/master.tar.gz | tar zxf - --strip-components 1 -C $MAXMINDDB \
+    && docker-php-ext-configure $MAXMINDDB/ext \
+    && docker-php-ext-install $MAXMINDDB/ext \
+    && rm -rf $MAXMINDDB \
+    && mkdir -p /usr/local/share/GeoIP \
+    && curl -skL https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz | gunzip > /usr/local/share/GeoIP/GeoLite2-City.mmdb
 
 # Copy files
 COPY files /
