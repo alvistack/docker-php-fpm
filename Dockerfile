@@ -17,7 +17,7 @@ FROM php:7.3-cli
 ENTRYPOINT [ "dumb-init", "--" ]
 CMD        [ "php", "-a" ]
 
-# Prepare APT depedencies
+# Prepare APT dependencies
 RUN set -ex \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y automake bison build-essential curl libtool patch \
