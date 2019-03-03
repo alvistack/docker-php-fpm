@@ -6,7 +6,8 @@
 
   - Upgrade memcached.so for PHP 7.3 (https://github.com/php-memcached-dev/php-memcached/issues/408)
   - Upgrade to GeoLite2 (https://support.maxmind.com/geolite-legacy-discontinuation-notice/)
-  - Ensure correct owner:group with docker-entrypoint.sh
+  - Align ENTRYPOINT as upstream image
+  - Add some debug utils
 
 ## 7.3.0-0alvistack2 - 2018-12-15
 
