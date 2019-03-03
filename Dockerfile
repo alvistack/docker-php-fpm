@@ -14,13 +14,13 @@
 
 FROM php:7.3-cli
 
-ENTRYPOINT [ "dumb-init", "--" ]
+ENTRYPOINT [ "dumb-init", "--", "docker-php-entrypoint" ]
 CMD        [ "php", "-a" ]
 
 # Prepare APT dependencies
 RUN set -ex \
     && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y automake bison build-essential curl libtool patch \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y automake bison build-essential curl htop less libtool patch vim wget \
     && rm -rf /var/lib/apt/lists/*
 
 # Install dumb-init
