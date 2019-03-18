@@ -88,12 +88,18 @@ RUN set -ex \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y libmaxminddb-dev \
     && rm -rf /var/lib/apt/lists/* \
     && MAXMINDDB="`mktemp -d`" \
-    && curl -skL https://github.com/maxmind/MaxMind-DB-Reader-php/archive/master.tar.gz | tar zxf - --strip-components 1 -C $MAXMINDDB \
+    && ARCHIVE="`mktemp --suffix=.tar.gz`" \
+    && curl -skL https://github.com/maxmind/MaxMind-DB-Reader-php/archive/master.tar.gz > $ARCHIVE \
+    && echo "7309ce9c743f0d3dabae915ab0dce240ae950754 $ARCHIVE" | sha1sum -c - \
+    && tar zxf $ARCHIVE --strip-components 1 -C $MAXMINDDB \
     && docker-php-ext-configure $MAXMINDDB/ext \
     && docker-php-ext-install $MAXMINDDB/ext \
-    && rm -rf $MAXMINDDB \
     && mkdir -p /usr/local/share/GeoIP \
-    && curl -skL https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz | gunzip > /usr/local/share/GeoIP/GeoLite2-City.mmdb
+    && ARCHIVE="`mktemp --suffix=.tar.gz`" \
+    && curl -skL https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz > $ARCHIVE \
+    && echo "e32c48f29372786b53bf0f8f113604a08ce59b3c $ARCHIVE" | sha1sum -c - \
+    && gunzip -c $ARCHIVE > /usr/local/share/GeoIP/GeoLite2-City.mmdb \
+    && rm -rf /tmp/tmp.*
 
 # Copy files
 COPY files /
