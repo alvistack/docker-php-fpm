@@ -18,10 +18,6 @@ Learn more about PHP: <https://php.net/>
   - [`7.2-fpm` (7.2-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.2-fpm/Dockerfile)
   - [`7.1-cli` (7.1-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.1-cli/Dockerfile)
   - [`7.1-fpm` (7.1-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.1-fpm/Dockerfile)
-  - [`7.0-cli` (7.0-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.0-cli/Dockerfile)
-  - [`7.0-fpm` (7.0-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.0-fpm/Dockerfile)
-  - [`5.6-cli` (5.6-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/5.6-cli/Dockerfile)
-  - [`5.6-fpm` (5.6-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/5.6-fpm/Dockerfile)
 
 ## Overview
 
