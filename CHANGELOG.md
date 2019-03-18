@@ -8,6 +8,7 @@
   - Upgrade to GeoLite2 (https://support.maxmind.com/geolite-legacy-discontinuation-notice/)
   - Align ENTRYPOINT as upstream image
   - Add some debug utils
+  - Add checksum for curl
 
 ## 7.3.0-0alvistack2 - 2018-12-15
 
