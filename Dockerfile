@@ -97,7 +97,7 @@ RUN set -ex \
     && mkdir -p /usr/local/share/GeoIP \
     && ARCHIVE="`mktemp --suffix=.tar.gz`" \
     && curl -skL https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz > $ARCHIVE \
-    && echo "b414938c6b77e99dfd693a8303b5bdeeaba1f0a4 $ARCHIVE" | sha1sum -c - \
+    && echo "a46c9ecb372679af16a9f4a3cf3173f33fd6e5af $ARCHIVE" | sha1sum -c - \
     && gunzip -c $ARCHIVE > /usr/local/share/GeoIP/GeoLite2-City.mmdb \
     && rm -rf /tmp/tmp.*
 
