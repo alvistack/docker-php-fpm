@@ -1,8 +1,15 @@
 # Docker Image Packaging for PHP
 
-## 7.3.x-0alvistack1 - TBC
+## 7.3.4-0alvistackx - TBC
 
 ### Major Changes
+
+## 7.3.4-0alvistack3 - 2019-04-16
+
+### Major Changes
+
+  - Remove legacy 5.6/7.0 support as upstream image
+  - Improve checksum handling
 
 ## 7.3.3-0alvistack1 - 2019-03-18
 

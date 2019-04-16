@@ -14,6 +14,13 @@
 
 FROM php:7.3-cli
 
+ENV DUMB_INIT_DOWNLOAD_URL                  "https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64"
+ENV DUMB_INIT_DOWNLOAD_CHECKSUM             "c16e45a301234c732af4c38be1e1000a2ce1cba8"
+ENV MAXMIND_DB_READER_PHP_DOWNLOAD_URL      "https://github.com/maxmind/MaxMind-DB-Reader-php/archive/master.tar.gz"
+ENV MAXMIND_DB_READER_PHP_DOWNLOAD_CHECKSUM "7309ce9c743f0d3dabae915ab0dce240ae950754"
+ENV GEOLITE2_CITY_DOWNLOAD_URL              "https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz"
+ENV GEOLITE2_CITY_DOWNLOAD_CHECKSUM         "3c8e4fd97215e5d1c5f5a60a1bcc42440e82d34a"
+
 ENTRYPOINT [ "dumb-init", "--", "docker-php-entrypoint" ]
 CMD        [ "php", "-a" ]
 
@@ -25,8 +32,9 @@ RUN set -ex \
 
 # Install dumb-init
 RUN set -ex \
-    && curl -skL https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 > /usr/local/bin/dumb-init \
-    && echo "c16e45a301234c732af4c38be1e1000a2ce1cba8 /usr/local/bin/dumb-init" | sha1sum -c - \
+    && curl -skL $DUMB_INIT_DOWNLOAD_URL > /usr/local/bin/dumb-init \
+    && sha1sum /usr/local/bin/dumb-init \
+    && echo "$DUMB_INIT_DOWNLOAD_CHECKSUM /usr/local/bin/dumb-init" | sha1sum -c - \
     && chmod 0755 /usr/local/bin/dumb-init
 
 # Install standard PHP extensions
@@ -87,17 +95,19 @@ RUN set -ex \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y libmaxminddb-dev \
     && rm -rf /var/lib/apt/lists/* \
-    && MAXMINDDB="`mktemp -d`" \
+    && MAXMIND_DB_READER_PHP="`mktemp -d`" \
     && ARCHIVE="`mktemp --suffix=.tar.gz`" \
-    && curl -skL https://github.com/maxmind/MaxMind-DB-Reader-php/archive/master.tar.gz > $ARCHIVE \
-    && echo "7309ce9c743f0d3dabae915ab0dce240ae950754 $ARCHIVE" | sha1sum -c - \
-    && tar zxf $ARCHIVE --strip-components 1 -C $MAXMINDDB \
-    && docker-php-ext-configure $MAXMINDDB/ext \
-    && docker-php-ext-install $MAXMINDDB/ext \
+    && curl -skL $MAXMIND_DB_READER_PHP_DOWNLOAD_URL > $ARCHIVE \
+    && sha1sum $ARCHIVE \
+    && echo "$MAXMIND_DB_READER_PHP_DOWNLOAD_CHECKSUM $ARCHIVE" | sha1sum -c - \
+    && tar zxf $ARCHIVE --strip-components 1 -C $MAXMIND_DB_READER_PHP \
+    && docker-php-ext-configure $MAXMIND_DB_READER_PHP/ext \
+    && docker-php-ext-install $MAXMIND_DB_READER_PHP/ext \
     && mkdir -p /usr/local/share/GeoIP \
     && ARCHIVE="`mktemp --suffix=.tar.gz`" \
-    && curl -skL https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz > $ARCHIVE \
-    && echo "a46c9ecb372679af16a9f4a3cf3173f33fd6e5af $ARCHIVE" | sha1sum -c - \
+    && curl -skL $GEOLITE2_CITY_DOWNLOAD_URL > $ARCHIVE \
+    && sha1sum $ARCHIVE \
+    && echo "$GEOLITE2_CITY_DOWNLOAD_CHECKSUM $ARCHIVE" | sha1sum -c - \
     && gunzip -c $ARCHIVE > /usr/local/share/GeoIP/GeoLite2-City.mmdb \
     && rm -rf /tmp/tmp.*
 
