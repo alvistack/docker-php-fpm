@@ -19,7 +19,7 @@ ENV DUMB_INIT_DOWNLOAD_CHECKSUM             "c16e45a301234c732af4c38be1e1000a2ce
 ENV MAXMIND_DB_READER_PHP_DOWNLOAD_URL      "https://github.com/maxmind/MaxMind-DB-Reader-php/archive/master.tar.gz"
 ENV MAXMIND_DB_READER_PHP_DOWNLOAD_CHECKSUM "7309ce9c743f0d3dabae915ab0dce240ae950754"
 ENV GEOLITE2_CITY_DOWNLOAD_URL              "https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz"
-ENV GEOLITE2_CITY_DOWNLOAD_CHECKSUM         "fbbd8f88642b1f476f5d94b2e566cf274cd783ea"
+ENV GEOLITE2_CITY_DOWNLOAD_CHECKSUM         "0634a4d2df5d916191ed0936e2d0f7650d6c2394"
 
 ENTRYPOINT [ "dumb-init", "--", "docker-php-entrypoint" ]
 CMD        [ "php", "-a" ]
