@@ -15,8 +15,8 @@
 
 ### Major Changes
 
-  - Upgrade memcached.so for PHP 7.3 (https://github.com/php-memcached-dev/php-memcached/issues/408)
-  - Upgrade to GeoLite2 (https://support.maxmind.com/geolite-legacy-discontinuation-notice/)
+  - Upgrade memcached.so for PHP 7.3 (<https://github.com/php-memcached-dev/php-memcached/issues/408>)
+  - Upgrade to GeoLite2 (<https://support.maxmind.com/geolite-legacy-discontinuation-notice/>)
   - Align ENTRYPOINT as upstream image
   - Add some debug utils
   - Add checksum for curl
