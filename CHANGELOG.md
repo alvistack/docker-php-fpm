@@ -1,8 +1,14 @@
 # Docker Image Packaging for PHP
 
-## 7.3.4-0alvistackx - TBC
+## 7.3.5-0alvistackx - TBC
 
 ### Major Changes
+
+## 7.3.5-0alvistack2 - 2019-05-20
+
+### Major Changes
+
+  - Bugfix "Build times out because no output was received"
 
 ## 7.3.4-0alvistack3 - 2019-04-16
 
