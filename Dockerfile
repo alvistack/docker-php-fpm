@@ -17,9 +17,9 @@ FROM php:7.3-cli
 ENV DUMB_INIT_DOWNLOAD_URL                  "https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64"
 ENV DUMB_INIT_DOWNLOAD_CHECKSUM             "c16e45a301234c732af4c38be1e1000a2ce1cba8"
 ENV MAXMIND_DB_READER_PHP_DOWNLOAD_URL      "https://github.com/maxmind/MaxMind-DB-Reader-php/archive/master.tar.gz"
-ENV MAXMIND_DB_READER_PHP_DOWNLOAD_CHECKSUM "7309ce9c743f0d3dabae915ab0dce240ae950754"
+ENV MAXMIND_DB_READER_PHP_DOWNLOAD_CHECKSUM "319910205a2794183dae2e2c57e9782567758e34"
 ENV GEOLITE2_CITY_DOWNLOAD_URL              "https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz"
-ENV GEOLITE2_CITY_DOWNLOAD_CHECKSUM         "28003ca187a918887db7d24963db8716e8c87c8b"
+ENV GEOLITE2_CITY_DOWNLOAD_CHECKSUM         "59f7dca9c90898b120535c2334d021d362b954f0"
 
 ENTRYPOINT [ "dumb-init", "--", "docker-php-entrypoint" ]
 CMD        [ "php", "-a" ]
