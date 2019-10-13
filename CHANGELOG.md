@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Revamp as Ansible based
+
 ## 7.3.5-0alvistack2 - 2019-05-20
 
 ### Major Changes
