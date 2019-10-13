@@ -9,7 +9,7 @@ fi
 
 if [ "$1" = 'php7.3' ]; then
     mkdir -p /var/www/html
-    chown -Rf www-data:www-data /var/www/html
+    chown www-data:www-data /var/www/html
     chmod 0755 /var/www/html
 fi
 
