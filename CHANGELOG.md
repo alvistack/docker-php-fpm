@@ -1,8 +1,14 @@
 # Docker Image Packaging for PHP
 
-## 7.3.5-0alvistackx - TBC
+## 7.3.10-1alvistackx - TBC
 
 ### Major Changes
+
+## 7.3.10-1alvistack1 - 2019-10-13
+
+### Major Changes
+
+  - Revamp as Ansible based
 
 ## 7.3.5-0alvistack2 - 2019-05-20
 

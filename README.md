@@ -23,10 +23,11 @@ Learn more about PHP: <https://php.net/>
 
 This Docker container makes it easy to get an instance of PHP up and running.
 
-Based on [Official PHP Docker Image](https://hub.docker.com/_/php/) with additional extensions enabled for CMS use cases, e.g. [Drupal](https://drupal.org/), [WordPress](https://wordpress.org/) or [Matomo](https://matomo.org/):
+Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
   - Handle `ENTRYPOINT` with [dumb-init](https://github.com/Yelp/dumb-init)
-  - Embed with [GeoLite Legacy City Database](https://dev.maxmind.com/geoip/legacy/geolite/)
+  - Change `User` and `Group` to `www-data`
+  - Change `DocumentRoot` to `/var/www/html`
   - Additional PHP extensions:
       - bcmath
       - bz2
