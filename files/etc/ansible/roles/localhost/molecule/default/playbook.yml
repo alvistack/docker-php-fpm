@@ -17,12 +17,18 @@
 - hosts: all
   remote_user: root
   roles:
+    - role: bootstrap
+    - role: locales
+    - role: timezone
+    - role: python
+    - role: ansible
     - role: dumb-init
     - role: gosu
 
 - hosts: all
   remote_user: root
   roles:
+    - role: git
     - role: php
       php_release: "{{ lookup('env', 'PHP_RELEASE') }}"
     - role: localhost
