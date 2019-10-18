@@ -52,4 +52,3 @@
     - { dest: "/etc/php/{{ php_release }}/fpm/pool.d/www.conf" }
     - { dest: "/usr/local/bin/docker-entrypoint.sh", mode: "0755" }
   tags: localhost
-
