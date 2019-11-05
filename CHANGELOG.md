@@ -1,10 +1,18 @@
 # Docker Image Packaging for PHP
 
-## 7.3.10-1alvistackx - TBC
+## 7.3.11-XalvistackY - TBC
+
+### Major Changes
+
+## 7.3.11-2alvistack1 - 2019-11-05
 
 ### Major Changes
 
   - Upgrade minimal Ansible support to 2.9.0
+  - Upgrade Travis CI test as Ubuntu Bionic based
+  - Default with Python 3
+  - Hotfix for en\_US.utf8 locale
+
 ## 7.3.10-1alvistack1 - 2019-10-13
 
 ### Major Changes
