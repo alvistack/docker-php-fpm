@@ -19,10 +19,10 @@ ENV LC_ALL "en_US.utf8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
-ENV PHP_RELEASE "7.3"
+ENV PHP_RELEASE "7.4"
 
 ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
-CMD        [ "php7.3", "-a" ]
+CMD        [ "php7.4", "-a" ]
 
 # Hotfix for en_US.utf8 locale
 RUN set -ex \

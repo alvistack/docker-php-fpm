@@ -12,12 +12,12 @@ Learn more about PHP: <https://php.net/>
 ## Supported Tags and Respective `Dockerfile` Links
 
   - [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-php/blob/master/Dockerfile)
+  - [`7.4-cli` (7.4-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.4-cli/Dockerfile)
+  - [`7.4-fpm` (7.4-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.4-fpm/Dockerfile)
   - [`7.3-cli` (7.3-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.3-cli/Dockerfile)
   - [`7.3-fpm` (7.3-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.3-fpm/Dockerfile)
   - [`7.2-cli` (7.2-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.2-cli/Dockerfile)
   - [`7.2-fpm` (7.2-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.2-fpm/Dockerfile)
-  - [`7.1-cli` (7.1-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.1-cli/Dockerfile)
-  - [`7.1-fpm` (7.1-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.1-fpm/Dockerfile)
 
 ## Overview
 
