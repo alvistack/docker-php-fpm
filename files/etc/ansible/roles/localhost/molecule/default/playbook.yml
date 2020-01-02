@@ -32,3 +32,4 @@
     - role: php
       php_release: "{{ lookup('env', 'PHP_RELEASE') }}"
     - role: localhost
+      php_release: "{{ lookup('env', 'PHP_RELEASE') }}"
