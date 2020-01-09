@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Prepare `/etc/php/*` as upstream image
+
 ## 7.4.1-2alvistack1 - 2019-12-27
 
 ### Major Changes
