@@ -1,0 +1,39 @@
+---
+
+# (c) Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+- name: "prepare /etc/php/*"
+  shell: |
+    set -o pipefail
+    find /etc/php/{{ php_release }} -type f | while read line
+    do
+      sed -i "s/^;*error_log = .*$/error_log = \/proc\/self\/fd\/2/g" $line
+      sed -i "s/^;*access.log = .*$/access.log = \/proc\/self\/fd\/2/g" $line
+      sed -i "s/^;*clear_env = .*$/clear_env = no/g" $line
+      sed -i "s/^;*catch_workers_output = .*$/catch_workers_output = yes/g" $line
+      sed -i "s/^;*decorate_workers_output = .*$/decorate_workers_output = no/g" $line
+      sed -i "s/^;*daemonize = .*$/daemonize = no/g" $line
+      sed -i "s/^;*listen = .*$/listen = 9000/g" $line
+    done
+    mv /etc/php/{{ php_release }}/* /etc/php/
+    ln -s ../cli /etc/php/{{ php_release }}/
+    ln -s ../fpm /etc/php/{{ php_release }}/
+    ln -s ../mods-available /etc/php/{{ php_release }}/
+  args:
+    executable: "/bin/bash"
+  register: result
+  until: result is succeeded
+  changed_when: result is not succeeded
+  tags: localhost
