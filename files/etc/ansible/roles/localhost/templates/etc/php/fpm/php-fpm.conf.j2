@@ -1,0 +1,7 @@
+; {{ ansible_manage }}
+
+[global]
+daemonize = no
+error_log = /proc/self/fd/2
+include   = /etc/php/fpm/pool.d/*.conf
+pid       = /run/php/php-fpm.pid

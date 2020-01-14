@@ -14,19 +14,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- name: prepare directories
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0755') }}"
+    state: "{{ item.state | default('directory') }}"
+  loop:
+    - { dest: "/var/www/html" }
+  tags: localhost
+
 - name: "prepare /etc/php/*"
   shell: |
     set -o pipefail
-    find /etc/php/{{ php_release }} -type f | while read line
-    do
-      sed -i "s/^;*error_log = .*$/error_log = \/proc\/self\/fd\/2/g" $line
-      sed -i "s/^;*access.log = .*$/access.log = \/proc\/self\/fd\/2/g" $line
-      sed -i "s/^;*clear_env = .*$/clear_env = no/g" $line
-      sed -i "s/^;*catch_workers_output = .*$/catch_workers_output = yes/g" $line
-      sed -i "s/^;*decorate_workers_output = .*$/decorate_workers_output = no/g" $line
-      sed -i "s/^;*daemonize = .*$/daemonize = no/g" $line
-      sed -i "s/^;*listen = .*$/listen = 9000/g" $line
-    done
     mv /etc/php/{{ php_release }}/* /etc/php/
     ln -s ../cli /etc/php/{{ php_release }}/
     ln -s ../fpm /etc/php/{{ php_release }}/
@@ -36,4 +37,33 @@
   register: result
   until: result is succeeded
   changed_when: result is not succeeded
+  tags: localhost
+
+- name: copy templates
+  template:
+    dest: "{{ item.dest }}"
+    src: "{{ item.src | default('./templates' + item.dest + '.j2') }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+    backup: true
+  loop:
+    - { dest: "/etc/php/cli/php.ini" }
+    - { dest: "/etc/php/fpm/php-fpm.conf" }
+    - { dest: "/etc/php/fpm/php.ini" }
+    - { dest: "/etc/php/fpm/pool.d/www.conf" }
+  tags: localhost
+
+- name: prepare files
+  file:
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+    state: "{{ item.state | default('file') }}"
+  loop:
+    - { dest: "/etc/php/cli/php.ini" }
+    - { dest: "/etc/php/fpm/php-fpm.conf" }
+    - { dest: "/etc/php/fpm/php.ini" }
+    - { dest: "/etc/php/fpm/pool.d/www.conf" }
   tags: localhost
