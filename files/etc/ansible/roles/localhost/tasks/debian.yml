@@ -22,7 +22,7 @@
     mode: "{{ item.mode | default('0755') }}"
     state: "{{ item.state | default('directory') }}"
   loop:
-    - { dest: "/var/www/html" }
+    - { dest: "/var/www/html", owner: "www-data", group: "www-data" }
   tags: localhost
 
 - name: "prepare /etc/php/*"
