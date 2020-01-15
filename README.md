@@ -25,7 +25,7 @@ This Docker container makes it easy to get an instance of PHP up and running.
 
 Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
-  - Handle `ENTRYPOINT` with [dumb-init](https://github.com/Yelp/dumb-init)
+  - Handle `ENTRYPOINT` with [tini](https://github.com/krallin/tini)
   - Change `User` and `Group` to `www-data`
   - Change `DocumentRoot` to `/var/www/html`
   - Additional PHP extensions:
