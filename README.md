@@ -11,11 +11,11 @@ Learn more about PHP: <https://php.net/>
 
 ## Supported Tags and Respective `Dockerfile` Links
 
-  - [`7.4-cli`, `latest`](https://github.com/alvistack/docker-php/blob/master/molecule/7.4-cli/Dockerfile.j2)
+  - [`7.4`, `latest`](https://github.com/alvistack/docker-php/blob/master/molecule/7.4/Dockerfile.j2)
   - [`7.4-fpm`](https://github.com/alvistack/docker-php/blob/master/molecule/7.4-fpm/Dockerfile.j2)
-  - [`7.3-cli`](https://github.com/alvistack/docker-php/blob/master/molecule/7.3-cli/Dockerfile.j2)
+  - [`7.3`](https://github.com/alvistack/docker-php/blob/master/molecule/7.3/Dockerfile.j2)
   - [`7.3-fpm`](https://github.com/alvistack/docker-php/blob/master/molecule/7.3-fpm/Dockerfile.j2)
-  - [`7.2-cli`](https://github.com/alvistack/docker-php/blob/master/molecule/7.2-cli/Dockerfile.j2)
+  - [`7.2`](https://github.com/alvistack/docker-php/blob/master/molecule/7.2/Dockerfile.j2)
   - [`7.2-fpm`](https://github.com/alvistack/docker-php/blob/master/molecule/7.2-fpm/Dockerfile.j2)
 
 ## Overview

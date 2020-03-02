@@ -8,11 +8,11 @@ language: shell
 
 env:
   jobs:
-    - MOLECULE_SCENARIO_NAME="7.2-cli"
+    - MOLECULE_SCENARIO_NAME="7.2"
     - MOLECULE_SCENARIO_NAME="7.2-fpm"
-    - MOLECULE_SCENARIO_NAME="7.3-cli"
+    - MOLECULE_SCENARIO_NAME="7.3"
     - MOLECULE_SCENARIO_NAME="7.3-fpm"
-    - MOLECULE_SCENARIO_NAME="7.4-cli"
+    - MOLECULE_SCENARIO_NAME="7.4"
     - MOLECULE_SCENARIO_NAME="7.4-fpm"
 
 before_install:
