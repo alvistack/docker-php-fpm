@@ -11,13 +11,12 @@ Learn more about PHP: <https://php.net/>
 
 ## Supported Tags and Respective `Dockerfile` Links
 
-  - [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-php/blob/master/Dockerfile)
-  - [`7.4-cli` (7.4-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.4-cli/Dockerfile)
-  - [`7.4-fpm` (7.4-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.4-fpm/Dockerfile)
-  - [`7.3-cli` (7.3-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.3-cli/Dockerfile)
-  - [`7.3-fpm` (7.3-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.3-fpm/Dockerfile)
-  - [`7.2-cli` (7.2-cli/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.2-cli/Dockerfile)
-  - [`7.2-fpm` (7.2-fpm/Dockerfile)](https://github.com/alvistack/docker-php/blob/7.2-fpm/Dockerfile)
+  - [`7.4-cli`, `latest`](https://github.com/alvistack/docker-php/blob/master/molecule/7.4-cli/Dockerfile.j2)
+  - [`7.4-fpm`](https://github.com/alvistack/docker-php/blob/master/molecule/7.4-fpm/Dockerfile.j2)
+  - [`7.3-cli`](https://github.com/alvistack/docker-php/blob/master/molecule/7.3-cli/Dockerfile.j2)
+  - [`7.3-fpm`](https://github.com/alvistack/docker-php/blob/master/molecule/7.3-fpm/Dockerfile.j2)
+  - [`7.2-cli`](https://github.com/alvistack/docker-php/blob/master/molecule/7.2-cli/Dockerfile.j2)
+  - [`7.2-fpm`](https://github.com/alvistack/docker-php/blob/master/molecule/7.2-fpm/Dockerfile.j2)
 
 ## Overview
 
@@ -25,6 +24,8 @@ This Docker container makes it easy to get an instance of PHP up and running.
 
 Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
+  - Minimized `Dockerfile` for meta data definition
+  - Provision by Ansible and Molecule Docker driver in single layer
   - Handle `ENTRYPOINT` with [tini](https://github.com/krallin/tini)
   - Change `User` and `Group` to `www-data`
   - Change `DocumentRoot` to `/var/www/html`

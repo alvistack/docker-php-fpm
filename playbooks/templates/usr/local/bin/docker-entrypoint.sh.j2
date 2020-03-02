@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# {{ ansible_managed }}
+
+set -o xtrace
+
+# Prepend executable if command starts with an option
+if [ "${1:0:1}" = '-' ]; then
+    set -- {{ php_command }} "$@"
+fi
+
+if [ "$1" = '{{ php_command }}' ]; then
+    # Set correct permission for /run/php
+    mkdir -p /run/php
+    chown www-data:www-data /run/php
+    chmod 0755 /run/php
+
+    # Set correct permission for /var/www/html
+    mkdir -p /var/www/html
+    chown www-data:www-data /var/www/html
+    chmod 0755 /var/www/html
+fi
+
+exec "$@"
