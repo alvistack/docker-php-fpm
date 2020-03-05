@@ -4,11 +4,12 @@
 
 ### Major Changes
 
-## 7.4.3-4alvistack1 - 2020-03-04
+## 7.4.3-4alvistack4 - 2020-03-05
 
 ### Major Changes
 
   - Revamp with Molecule and `docker commit`
+  - Consolidate molecule tests into `default` (noop)
   - Hotfix for systemd
 
 ## 7.4.1-3alvistack1 - 2020-01-15
