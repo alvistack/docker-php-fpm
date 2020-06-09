@@ -45,5 +45,5 @@ ENV PHP_RELEASE "{{ php_release }}"
 VOLUME  /var/www/html
 WORKDIR /var/www/html
 
-ENTRYPOINT [ "tini", "-g", "--", "docker-entrypoint.sh" ]
+ENTRYPOINT [ "catatonit", "-g", "--", "docker-entrypoint.sh" ]
 CMD        [ "{{ php_command }}", "-a" ]

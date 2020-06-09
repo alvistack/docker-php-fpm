@@ -47,5 +47,5 @@ WORKDIR /var/www/html
 
 EXPOSE 9000
 
-ENTRYPOINT [ "tini", "-g", "--", "docker-entrypoint.sh" ]
+ENTRYPOINT [ "catatonit", "-g", "--", "docker-entrypoint.sh" ]
 CMD        [ "{{ php_command }}" ]
