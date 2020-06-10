@@ -1,9 +1,10 @@
 # Docker Image Packaging for PHP
 
-## 7.4.4-XalvistackY - TBC
+## 7.4.6-XalvistackY - TBC
 
 ### Major Changes
 
+  - Revamp `create`, `side_effect`, `verify` and `destroy` logic
   - Replace `tini` with `catatonit`
   - Rename `post_tasks.yml` as `side_effect.yml`
   - Upgrade base image to Ubuntu 20.04
