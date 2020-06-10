@@ -4,6 +4,10 @@
 
 ### Major Changes
 
+## 7.4.6-4alvistack3 - 2020-06-10
+
+### Major Changes
+
 ## 7.4.6-4alvistack2 - 2020-06-10
 
 ### Major Changes
