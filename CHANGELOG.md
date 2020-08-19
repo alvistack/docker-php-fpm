@@ -4,6 +4,9 @@
 
 ### Major Changes
 
+  - Upgrade Travis CI test as Ubuntu Focal based
+  - Upgrade minimal Ansible support to 2.10.0
+
 ## 7.4.6-4alvistack4 - 2020-06-10
 
 ### Major Changes
