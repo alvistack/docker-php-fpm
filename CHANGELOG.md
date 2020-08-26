@@ -1,9 +1,14 @@
 # Docker Image Packaging for PHP
 
-## 7.4.6-XalvistackY - TBC
+## 7.4.9-XalvistackY - TBC
 
 ### Major Changes
 
+## 7.4.9-4alvistack2 - 2020-08-26
+
+### Major Changes
+
+  - Upgrade minimal Ansible Lint support to 4.3.2
   - Upgrade Travis CI test as Ubuntu Focal based
   - Upgrade minimal Ansible support to 2.10.0
 
