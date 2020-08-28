@@ -42,6 +42,7 @@
         mode: "{{ item.mode | default('0755') }}"
         state: "{{ item.state | default('directory') }}"
       loop:
+        - { dest: "/run/php", owner: "www-data", group: "www-data" }
         - { dest: "/var/www/html", owner: "www-data", group: "www-data" }
 
     - name: "prepare /etc/php/*"
@@ -86,36 +87,3 @@
         - { dest: "/etc/php/fpm/php.ini" }
         - { dest: "/etc/php/fpm/pool.d/www.conf" }
         - { dest: "/var/www/html/phpinfo.php" }
-
-    - name: rm -rf /root/.ansible/tmp/*
-      raw: |
-        set -ex
-        rm -rf /root/.ansible/tmp/*
-        rm -rf /root/.cache/*
-        rm -rf /tmp/*
-      changed_when: false
-      ignore_errors: true
-
-    - name: debian | apt-get clean
-      raw: |
-        set -ex
-        apt-get clean
-        rm -rf /var/lib/apt/lists/*
-      changed_when: false
-      ignore_errors: true
-
-    - name: redhat | yum clean all
-      raw: |
-        set -ex
-        yum clean all
-        rm -rf /var/cache/yum/*
-      changed_when: false
-      ignore_errors: true
-
-    - name: suse | zypper clean --all
-      raw: |
-        set -ex
-        zypper clean --all
-        rm -rf /var/cache/zypper/*
-      changed_when: false
-      ignore_errors: true
