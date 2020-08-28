@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Refine Molecule matrix
+
 ## 7.4.9-4alvistack2 - 2020-08-26
 
 ### Major Changes
