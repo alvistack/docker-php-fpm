@@ -1,6 +1,10 @@
 # Docker Image Packaging for PHP
 
-## 7.4.10-XalvistackY - TBC
+## 7.4.11-XalvistackY - TBC
+
+### Major Changes
+
+## 7.4.11-4alvistack1 - 2020-10-14
 
 ### Major Changes
 
