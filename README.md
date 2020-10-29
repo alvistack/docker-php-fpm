@@ -9,14 +9,14 @@ PHP is a popular general-purpose scripting language that is especially suited to
 
 Learn more about PHP: <https://php.net/>
 
-## Supported Tags and Respective `Dockerfile` Links
+## Supported Tags and Respective Packer Template Links
 
-  - [`7.4`, `latest`](https://github.com/alvistack/docker-php/blob/master/molecule/7.4/Dockerfile.j2)
-  - [`7.4-fpm`](https://github.com/alvistack/docker-php/blob/master/molecule/7.4-fpm/Dockerfile.j2)
-  - [`7.3`](https://github.com/alvistack/docker-php/blob/master/molecule/7.3/Dockerfile.j2)
-  - [`7.3-fpm`](https://github.com/alvistack/docker-php/blob/master/molecule/7.3-fpm/Dockerfile.j2)
-  - [`7.2`](https://github.com/alvistack/docker-php/blob/master/molecule/7.2/Dockerfile.j2)
-  - [`7.2-fpm`](https://github.com/alvistack/docker-php/blob/master/molecule/7.2-fpm/Dockerfile.j2)
+  - [`7.4`, `latest`](https://github.com/alvistack/docker-php/blob/master/packer/7.4/packer.json)
+  - [`7.4-fpm`](https://github.com/alvistack/docker-php/blob/master/packer/7.4-fpm/packer.json)
+  - [`7.3`](https://github.com/alvistack/docker-php/blob/master/packer/7.3/packer.json)
+  - [`7.3-fpm`](https://github.com/alvistack/docker-php/blob/master/packer/7.3-fpm/packer.json)
+  - [`7.2`](https://github.com/alvistack/docker-php/blob/master/packer/7.2/packer.json)
+  - [`7.2-fpm`](https://github.com/alvistack/docker-php/blob/master/packer/7.2-fpm/packer.json)
 
 ## Overview
 
@@ -24,8 +24,7 @@ This Docker container makes it easy to get an instance of PHP up and running.
 
 Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
-  - Minimized `Dockerfile` for meta data definition
-  - Provision by Ansible and Molecule Docker driver in single layer
+  - Packaging by Packer Docker builder and Ansible provisioner in single layer
   - Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
   - Change `User` and `Group` to `www-data`
   - Change `DocumentRoot` to `/var/www/html`
