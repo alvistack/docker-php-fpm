@@ -11,12 +11,12 @@ Learn more about PHP: <https://php.net/>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`7.4`, `latest`](https://github.com/alvistack/docker-php/blob/master/packer/7.4/packer.json)
-  - [`7.4-fpm`](https://github.com/alvistack/docker-php/blob/master/packer/7.4-fpm/packer.json)
-  - [`7.3`](https://github.com/alvistack/docker-php/blob/master/packer/7.3/packer.json)
-  - [`7.3-fpm`](https://github.com/alvistack/docker-php/blob/master/packer/7.3-fpm/packer.json)
-  - [`7.2`](https://github.com/alvistack/docker-php/blob/master/packer/7.2/packer.json)
-  - [`7.2-fpm`](https://github.com/alvistack/docker-php/blob/master/packer/7.2-fpm/packer.json)
+  - [`7.4`, `latest`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.4/packer.json)
+  - [`7.4-fpm`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.4-fpm/packer.json)
+  - [`7.3`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.3/packer.json)
+  - [`7.3-fpm`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.3-fpm/packer.json)
+  - [`7.2`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.2/packer.json)
+  - [`7.2-fpm`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.2-fpm/packer.json)
 
 ## Overview
 
