@@ -82,7 +82,7 @@
 
     - name: "prepare /etc/php/*"
       shell: |
-        set -o pipefail
+        set -euo pipefail
         mv /etc/php/{{ php_release }}/* /etc/php/
         ln -s ../cli /etc/php/{{ php_release }}/
         ln -s ../fpm /etc/php/{{ php_release }}/
