@@ -1,6 +1,6 @@
 # Docker Image Packaging for PHP
 
-[![Travis](https://img.shields.io/travis/com/alvistack/docker-php.svg)](https://travis-ci.com/alvistack/docker-php)
+[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-php/master)](https://gitlab.com/alvistack/docker-php/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/php.svg)](https://hub.docker.com/r/alvistack/php/)
