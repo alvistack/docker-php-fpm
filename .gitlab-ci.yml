@@ -88,9 +88,6 @@
     - *script-docker-push
 
 default:
-  cache:
-    paths:
-      - packer/*/output-docker/*.tar.gz
   before_script:
     - *script-git-submodule
 
@@ -99,6 +96,8 @@ build:docker-7.4:
   stage: build
   cache:
     key: "$CI_PIPELINE_ID-docker-7.4"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.4"
@@ -108,6 +107,8 @@ test:docker-7.4:
   stage: test
   cache:
     key: "$CI_PIPELINE_ID-docker-7.4"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.4"
@@ -119,6 +120,8 @@ deploy:docker-7.4:
   stage: deploy
   cache:
     key: "$CI_PIPELINE_ID-docker-7.4"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.4"
@@ -130,6 +133,8 @@ build:docker-7.4-fpm:
   stage: build
   cache:
     key: "$CI_PIPELINE_ID-docker-7.4-fpm"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.4-fpm"
@@ -139,6 +144,8 @@ test:docker-7.4-fpm:
   stage: test
   cache:
     key: "$CI_PIPELINE_ID-docker-7.4-fpm"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.4-fpm"
@@ -150,6 +157,8 @@ deploy:docker-7.4-fpm:
   stage: deploy
   cache:
     key: "$CI_PIPELINE_ID-docker-7.4-fpm"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.4-fpm"
@@ -161,6 +170,8 @@ build:docker-7.3:
   stage: build
   cache:
     key: "$CI_PIPELINE_ID-docker-7.3"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.3"
@@ -170,6 +181,8 @@ test:docker-7.3:
   stage: test
   cache:
     key: "$CI_PIPELINE_ID-docker-7.3"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.3"
@@ -181,6 +194,8 @@ deploy:docker-7.3:
   stage: deploy
   cache:
     key: "$CI_PIPELINE_ID-docker-7.3"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.3"
@@ -192,6 +207,8 @@ build:docker-7.3-fpm:
   stage: build
   cache:
     key: "$CI_PIPELINE_ID-docker-7.3-fpm"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.3-fpm"
@@ -201,6 +218,8 @@ test:docker-7.3-fpm:
   stage: test
   cache:
     key: "$CI_PIPELINE_ID-docker-7.3-fpm"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.3-fpm"
@@ -212,6 +231,8 @@ deploy:docker-7.3-fpm:
   stage: deploy
   cache:
     key: "$CI_PIPELINE_ID-docker-7.3-fpm"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.3-fpm"
@@ -223,6 +244,8 @@ build:docker-7.2:
   stage: build
   cache:
     key: "$CI_PIPELINE_ID-docker-7.2"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.2"
@@ -232,6 +255,8 @@ test:docker-7.2:
   stage: test
   cache:
     key: "$CI_PIPELINE_ID-docker-7.2"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.2"
@@ -243,6 +268,8 @@ deploy:docker-7.2:
   stage: deploy
   cache:
     key: "$CI_PIPELINE_ID-docker-7.2"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.2"
@@ -254,6 +281,8 @@ build:docker-7.2-fpm:
   stage: build
   cache:
     key: "$CI_PIPELINE_ID-docker-7.2-fpm"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.2-fpm"
@@ -263,6 +292,8 @@ test:docker-7.2-fpm:
   stage: test
   cache:
     key: "$CI_PIPELINE_ID-docker-7.2-fpm"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.2-fpm"
@@ -274,6 +305,8 @@ deploy:docker-7.2-fpm:
   stage: deploy
   cache:
     key: "$CI_PIPELINE_ID-docker-7.2-fpm"
+    paths:
+      - packer/*/output-docker/*.tar.gz
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.2-fpm"
