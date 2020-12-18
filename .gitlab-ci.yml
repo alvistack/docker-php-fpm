@@ -96,6 +96,7 @@ deploy:docker-7.4:
     key: "$CI_PIPELINE_ID-docker-7.4"
     paths:
       - packer/*/output-docker/*.tar.gz
+    policy: pull
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.4"
@@ -120,6 +121,7 @@ deploy:docker-7.4-fpm:
     key: "$CI_PIPELINE_ID-docker-7.4-fpm"
     paths:
       - packer/*/output-docker/*.tar.gz
+    policy: pull
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.4-fpm"
@@ -144,6 +146,7 @@ deploy:docker-7.3:
     key: "$CI_PIPELINE_ID-docker-7.3"
     paths:
       - packer/*/output-docker/*.tar.gz
+    policy: pull
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.3"
@@ -168,6 +171,7 @@ deploy:docker-7.3-fpm:
     key: "$CI_PIPELINE_ID-docker-7.3-fpm"
     paths:
       - packer/*/output-docker/*.tar.gz
+    policy: pull
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.3-fpm"
@@ -192,6 +196,7 @@ deploy:docker-7.2:
     key: "$CI_PIPELINE_ID-docker-7.2"
     paths:
       - packer/*/output-docker/*.tar.gz
+    policy: pull
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.2"
@@ -216,6 +221,7 @@ deploy:docker-7.2-fpm:
     key: "$CI_PIPELINE_ID-docker-7.2-fpm"
     paths:
       - packer/*/output-docker/*.tar.gz
+    policy: pull
   variables:
     _PACKER_BUILDER_PROVIDER: "docker"
     _PACKER_BUILDER_VERSION: "7.2-fpm"
