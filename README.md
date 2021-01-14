@@ -1,9 +1,9 @@
 # Docker Image Packaging for PHP
 
-[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-php/master)](https://gitlab.com/alvistack/docker-php/-/pipelines)
+[![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-php/master)](https://gitlab.com/alvistack/docker-php/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/php.svg)](https://hub.docker.com/r/alvistack/php/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/php-7.4.svg)](https://hub.docker.com/r/alvistack/php-7.4)
 
 PHP is a popular general-purpose scripting language that is especially suited to web development.
 
@@ -11,12 +11,18 @@ Learn more about PHP: <https://php.net/>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`7.4`, `latest`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.4/packer.json)
-  - [`7.4-fpm`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.4-fpm/packer.json)
-  - [`7.3`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.3/packer.json)
-  - [`7.3-fpm`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.3-fpm/packer.json)
-  - [`7.2`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.2/packer.json)
-  - [`7.2-fpm`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.2-fpm/packer.json)
+  - [`alvistack/php-7.4`](https://hub.docker.com/r/alvistack/php-7.4)
+      - [`packer/docker-7.4/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.4/packer.json)
+  - [`alvistack/php-7.4-fpm`](https://hub.docker.com/r/alvistack/php-7.4-fpm)
+      - [`packer/docker-7.4-fpm/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.4-fpm/packer.json)
+  - [`alvistack/php-7.3`](https://hub.docker.com/r/alvistack/php-7.3)
+      - [`packer/docker-7.3/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.3/packer.json)
+  - [`alvistack/php-7.3-fpm`](https://hub.docker.com/r/alvistack/php-7.3-fpm)
+      - [`packer/docker-7.3-fpm/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.3-fpm/packer.json)
+  - [`alvistack/php-7.2`](https://hub.docker.com/r/alvistack/php-7.2)
+      - [`packer/docker-7.2/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.2/packer.json)
+  - [`alvistack/php-7.2-fpm`](https://hub.docker.com/r/alvistack/php-7.2-fpm)
+      - [`packer/docker-7.2-fpm/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.2-fpm/packer.json)
 
 ## Overview
 
@@ -93,13 +99,13 @@ Start PHP:
 
 ## Versioning
 
-### `alvistack/php:latest`
+### `YYYYMMDD.Y.Z`
 
-The `latest` tag matches the most recent [GitHub Release](https://github.com/alvistack/docker-php/releases) of this repository. Thus using `alvistack/php:latest` or `alvistack/php` will ensure you are running the most up to date stable version of this image.
+Release tags could be find from [GitHub Release](https://github.com/alvistack/docker-php/releases) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
 
-### `alvistack/php:<version>`
+### `YYYYMMDD.0.0`
 
-The version tags are rolling release rebuild by [Travis](https://travis-ci.com/alvistack/docker-php) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
+Version tags ended with `.0.0` are rolling release rebuild by [GitLab pipeline](https://gitlab.com/alvistack/docker-php/-/pipelines) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
 
 ## License
 
