@@ -84,7 +84,7 @@ For the `VOLUME` directory that is used to store the repository data (amongst ot
 Start PHP:
 
     # Pull latest image
-    docker pull alvistack/php
+    docker pull alvistack/php-7.4
     
     # Run with built-in web server
     docker run \
@@ -92,7 +92,7 @@ Start PHP:
         --rm \
         --name php \
         --publish 8080:8080 \
-        alvistack/php \
+        alvistack/php-7.4 \
         php -S 0.0.0.0:8080 -t /var/www/html
 
 **Success**. PHP is now available on <http://localhost:8080/phpinfo.php>
