@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Support PHP 8.0
+
 ## 20210313.1.1 - 2021-03-13
 
 ### Major Changes
