@@ -14,5 +14,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-php_release: "7.2"
-php_command: "php7.2"
+php_release: "8.0"
+php_command: "php-fpm8.0"
