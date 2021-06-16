@@ -4,7 +4,9 @@
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/php-8.0.svg)](https://hub.docker.com/r/alvistack/php-8.0)
+
 PHP is a popular general-purpose scripting language that is especially suited to web development.
+
 Learn more about PHP: <https://php.net/>
 
 ## Supported Tags and Respective Packer Template Links
@@ -25,6 +27,7 @@ Learn more about PHP: <https://php.net/>
 ## Overview
 
 This Docker container makes it easy to get an instance of PHP up and running.
+
 Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
   - Packaging by Packer Docker builder and Ansible provisioner in single layer
@@ -77,17 +80,21 @@ Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with s
 ### Quick Start
 
 For the `VOLUME` directory that is used to store the repository data (amongst other things) we recommend mounting a host directory as a [data volume](https://docs.docker.com/engine/tutorials/dockervolumes/#/data-volumes), or via a named volume if using a docker version \>= 1.9.
+
 Start PHP:
-\# Pull latest image
-docker pull alvistack/php-8.0
-\# Run with built-in web server
-docker run   
-\-itd   
-\--rm   
-\--name php   
-\--publish 8080:8080   
-alvistack/php-8.0   
-php -S 0.0.0.0:8080 -t /var/www/html
+
+    # Pull latest image
+    docker pull alvistack/php-8.0
+    
+    # Run with built-in web server
+    docker run \
+        -itd \
+        --rm \
+        --name php \
+        --publish 8080:8080 \
+        alvistack/php-8.0 \
+        php -S 0.0.0.0:8080 -t /var/www/html
+
 **Success**. PHP is now available on <http://localhost:8080/phpinfo.php>
 
 ## Versioning
