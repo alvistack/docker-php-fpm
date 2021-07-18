@@ -17,9 +17,12 @@
 
 ### Major Changes
 
-  - Bugfix [ansible-lint `namespace`](https://github.com/ansible-community/ansible-lint/pull/1451)
-  - Bugfix [ansible-lint `no-handler`](https://github.com/ansible-community/ansible-lint/pull/1402)
-  - Bugfix [ansible-lint `unnamed-task`](https://github.com/ansible-community/ansible-lint/pull/1413)
+  - Bugfix [ansible-lint
+    `namespace`](https://github.com/ansible-community/ansible-lint/pull/1451)
+  - Bugfix [ansible-lint
+    `no-handler`](https://github.com/ansible-community/ansible-lint/pull/1402)
+  - Bugfix [ansible-lint
+    `unnamed-task`](https://github.com/ansible-community/ansible-lint/pull/1413)
   - Change GIT tag as per Vagrant Box naming and versioning limitation
 
 ## 7.4.12-4alvistack2 - 2020-12-09
@@ -107,8 +110,10 @@
 
 ### Major Changes
 
-  - Upgrade memcached.so for PHP 7.3 (<https://github.com/php-memcached-dev/php-memcached/issues/408>)
-  - Upgrade to GeoLite2 (<https://support.maxmind.com/geolite-legacy-discontinuation-notice/>)
+  - Upgrade memcached.so for PHP 7.3
+    (<https://github.com/php-memcached-dev/php-memcached/issues/408>)
+  - Upgrade to GeoLite2
+    (<https://support.maxmind.com/geolite-legacy-discontinuation-notice/>)
   - Align ENTRYPOINT as upstream image
   - Add some debug utils
   - Add checksum for curl
@@ -121,7 +126,8 @@
 
 ### PHP \>= 7.0
 
-  - Install memcached from master (<https://github.com/php-memcached-dev/php-memcached/issues/408>)
+  - Install memcached from master
+    (<https://github.com/php-memcached-dev/php-memcached/issues/408>)
 
 ### PHP 5.6
 
