@@ -1,16 +1,11 @@
 # Docker Image Packaging for PHP
 
-[![GitLab pipeline
-status](https://img.shields.io/gitlab/pipeline/alvistack/docker-php/master)](https://gitlab.com/alvistack/docker-php/-/pipelines)
-[![GitHub
-release](https://img.shields.io/github/release/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/releases)
-[![GitHub
-license](https://img.shields.io/github/license/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/blob/master/LICENSE)
-[![Docker
-Pulls](https://img.shields.io/docker/pulls/alvistack/php-8.0.svg)](https://hub.docker.com/r/alvistack/php-8.0)
+[![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-php/master)](https://gitlab.com/alvistack/docker-php/-/pipelines)
+[![GitHub release](https://img.shields.io/github/release/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/releases)
+[![GitHub license](https://img.shields.io/github/license/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/blob/master/LICENSE)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/php-8.0.svg)](https://hub.docker.com/r/alvistack/php-8.0)
 
-PHP is a popular general-purpose scripting language that is especially
-suited to web development.
+PHP is a popular general-purpose scripting language that is especially suited to web development.
 
 Learn more about PHP: <https://php.net/>
 
@@ -31,16 +26,12 @@ Learn more about PHP: <https://php.net/>
 
 ## Overview
 
-This Docker container makes it easy to get an instance of PHP up and
-running.
+This Docker container makes it easy to get an instance of PHP up and running.
 
-Based on [Official Ubuntu Docker
-Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
+Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
-  - Packaging by Packer Docker builder and Ansible provisioner in single
-    layer
-  - Handle `ENTRYPOINT` with
-    [catatonit](https://github.com/openSUSE/catatonit)
+  - Packaging by Packer Docker builder and Ansible provisioner in single layer
+  - Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
   - Change `User` and `Group` to `www-data`
   - Change `DocumentRoot` to `/var/www/html`
   - Additional PHP extensions:
@@ -88,10 +79,7 @@ Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
 ### Quick Start
 
-For the `VOLUME` directory that is used to store the repository data
-(amongst other things) we recommend mounting a host directory as a [data
-volume](https://docs.docker.com/engine/tutorials/dockervolumes/#/data-volumes),
-or via a named volume if using a docker version \>= 1.9.
+For the `VOLUME` directory that is used to store the repository data (amongst other things) we recommend mounting a host directory as a [data volume](https://docs.docker.com/engine/tutorials/dockervolumes/#/data-volumes), or via a named volume if using a docker version \>= 1.9.
 
 Start PHP:
 
@@ -113,23 +101,16 @@ Start PHP:
 
 ### `YYYYMMDD.Y.Z`
 
-Release tags could be find from [GitHub
-Release](https://github.com/alvistack/docker-php/releases) of this
-repository. Thus using these tags will ensure you are running the most
-up to date stable version of this image.
+Release tags could be find from [GitHub Release](https://github.com/alvistack/docker-php/releases) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
 
 ### `YYYYMMDD.0.0`
 
-Version tags ended with `.0.0` are rolling release rebuild by [GitLab
-pipeline](https://gitlab.com/alvistack/docker-php/-/pipelines) in weekly
-basis. Thus using these tags will ensure you are running the latest
-packages provided by the base image project.
+Version tags ended with `.0.0` are rolling release rebuild by [GitLab pipeline](https://gitlab.com/alvistack/docker-php/-/pipelines) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
 
 ## License
 
   - Code released under [Apache License 2.0](LICENSE)
-  - Docs released under [CC BY
-    4.0](http://creativecommons.org/licenses/by/4.0/)
+  - Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Author Information
 
