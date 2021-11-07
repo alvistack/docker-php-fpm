@@ -90,6 +90,10 @@
 
     - name: include role
       include_role:
+        name: node
+
+    - name: include role
+      include_role:
         name: php
 
     - name: prepare directories
