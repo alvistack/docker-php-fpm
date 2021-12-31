@@ -4,6 +4,9 @@
 
 ### Major Changes
 
+  - Support PHP 8.1
+  - Remove PHP 7.3 support
+
 ## 20211231.1.3 - 2021-12-31
 
 ### Major Changes
