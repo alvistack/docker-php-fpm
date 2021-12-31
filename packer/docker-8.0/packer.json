@@ -9,7 +9,7 @@
         "VOLUME /var/www/html",
         "WORKDIR /var/www/html",
         "ENTRYPOINT [\"catatonit\", \"-g\", \"--\", \"docker-entrypoint.sh\"]",
-        "CMD [\"php7.4\", \"-a\"]"
+        "CMD [\"php8.0\", \"-a\"]"
       ],
       "commit": true,
       "image": "ubuntu:20.04",
