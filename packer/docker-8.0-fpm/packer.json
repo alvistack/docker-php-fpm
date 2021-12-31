@@ -10,7 +10,7 @@
         "WORKDIR /var/www/html",
         "EXPOSE 9000",
         "ENTRYPOINT [\"catatonit\", \"-g\", \"--\", \"docker-entrypoint.sh\"]",
-        "CMD [\"php-fpm7.4\"]"
+        "CMD [\"php-fpm8.0\"]"
       ],
       "commit": true,
       "image": "ubuntu:20.04",

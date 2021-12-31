@@ -8,8 +8,9 @@
         "ENV TZ UTC",
         "VOLUME /var/www/html",
         "WORKDIR /var/www/html",
+        "EXPOSE 9000",
         "ENTRYPOINT [\"catatonit\", \"-g\", \"--\", \"docker-entrypoint.sh\"]",
-        "CMD [\"php7.3\", \"-a\"]"
+        "CMD [\"php-fpm8.1\"]"
       ],
       "commit": true,
       "image": "ubuntu:20.04",

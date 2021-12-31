@@ -5,7 +5,7 @@
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-php/master)](https://gitlab.com/alvistack/docker-php/-/pipelines)
 [![GitHub tag](https://img.shields.io/github/tag/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/tags)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/php-8.0.svg)](https://hub.docker.com/r/alvistack/php-8.0)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/php-8.1.svg)](https://hub.docker.com/r/alvistack/php-8.1)
 
 PHP is a popular general-purpose scripting language that is especially suited to web development.
 
@@ -13,6 +13,10 @@ Learn more about PHP: <https://php.net/>
 
 ## Supported Tags and Respective Packer Template Links
 
+  - [`alvistack/php-8.1`](https://hub.docker.com/r/alvistack/php-8.1)
+      - [`packer/docker-8.1/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-8.1/packer.json)
+  - [`alvistack/php-8.1-fpm`](https://hub.docker.com/r/alvistack/php-8.1-fpm)
+      - [`packer/docker-8.1-fpm/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-8.1-fpm/packer.json)
   - [`alvistack/php-8.0`](https://hub.docker.com/r/alvistack/php-8.0)
       - [`packer/docker-8.0/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-8.0/packer.json)
   - [`alvistack/php-8.0-fpm`](https://hub.docker.com/r/alvistack/php-8.0-fpm)
@@ -21,10 +25,6 @@ Learn more about PHP: <https://php.net/>
       - [`packer/docker-7.4/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.4/packer.json)
   - [`alvistack/php-7.4-fpm`](https://hub.docker.com/r/alvistack/php-7.4-fpm)
       - [`packer/docker-7.4-fpm/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.4-fpm/packer.json)
-  - [`alvistack/php-7.3`](https://hub.docker.com/r/alvistack/php-7.3)
-      - [`packer/docker-7.3/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.3/packer.json)
-  - [`alvistack/php-7.3-fpm`](https://hub.docker.com/r/alvistack/php-7.3-fpm)
-      - [`packer/docker-7.3-fpm/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.3-fpm/packer.json)
 
 ## Overview
 
@@ -86,7 +86,7 @@ For the `VOLUME` directory that is used to store the repository data (amongst ot
 Start PHP:
 
     # Pull latest image
-    docker pull alvistack/php-8.0
+    docker pull alvistack/php-8.1
     
     # Run with built-in web server
     docker run \
@@ -94,7 +94,7 @@ Start PHP:
         --rm \
         --name php \
         --publish 8080:8080 \
-        alvistack/php-8.0 \
+        alvistack/php-8.1 \
         php -S 0.0.0.0:8080 -t /var/www/html
 
 **Success**. PHP is now available on <http://localhost:8080/phpinfo.php>
