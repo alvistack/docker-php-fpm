@@ -5,7 +5,6 @@
 ### Major Changes
 
   - Skip package upgrade before running molecule
-  - Replace docker with podman
   - Support PHP 8.1
   - Remove PHP 7.3 support
 
