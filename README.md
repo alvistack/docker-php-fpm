@@ -1,6 +1,6 @@
 # Docker Image Packaging for PHP
 
-<img src="/alvistack.svg" width="75" alt="AlviStack">
+<a href="https://alvistack.com" title="AlviStack" target="_blank"><img src="/alvistack.svg" height="75" alt="AlviStack"></a>
 
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-php/master)](https://gitlab.com/alvistack/docker-php/-/pipelines)
 [![GitHub tag](https://img.shields.io/github/tag/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/tags)
