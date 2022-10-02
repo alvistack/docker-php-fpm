@@ -109,12 +109,13 @@
         - { dest: "/var/www/html", owner: "www-data", group: "www-data" }
 
     - name: "prepare /etc/php/*"
-      ansible.builtin.shell: |
-        set -euxo pipefail
-        mv /etc/php/{{ php_release }}/* /etc/php/
-        ln -s ../cli /etc/php/{{ php_release }}/
-        ln -s ../fpm /etc/php/{{ php_release }}/
-        ln -s ../mods-available /etc/php/{{ php_release }}/
+      ansible.builtin.shell:
+        cmd: |
+          set -euxo pipefail
+          mv /etc/php/{{ php_release }}/* /etc/php/
+          ln -s ../cli /etc/php/{{ php_release }}/
+          ln -s ../fpm /etc/php/{{ php_release }}/
+          ln -s ../mods-available /etc/php/{{ php_release }}/
       args:
         executable: "/bin/bash"
         creates: "/etc/php/mods-available"
