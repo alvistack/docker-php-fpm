@@ -4,16 +4,20 @@
 
 set -euxo pipefail
 
-# Prepend executable if command starts with an option
+# Prepend executable if command starts with an option.
 if [ "${1:0:1}" = '-' ]; then
     set -- {{ php_command }} "$@"
 fi
 
+# Modify Ansible inventory with active hostname.
+if [ "$(id -u)" = '0' ]; then
+    _HOSTNAME="$(hostname -s)"
+    sed -i "s/localhost/$_HOSTNAME/g" /etc/ansible/hosts
+fi
+
+# Verify configuration with Ansible.
 if [ "$1" = '{{ php_command }}' ]; then
-    # Set correct permission for /var/www/html
-    mkdir -p /var/www/html
-    chown www-data:www-data /var/www/html
-    chmod 0755 /var/www/html
+    ansible-playbook /etc/ansible/playbooks/verify.yml
 fi
 
 exec "$@"
