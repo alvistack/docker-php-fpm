@@ -173,45 +173,6 @@ deploy:php-8.1-fpm-docker:
   needs:
     - test:php-8.1-fpm-docker
 
-build:php-8.1-docker:
-  <<: *job-packer-build
-  stage: build
-  cache:
-    key: "$CI_PIPELINE_ID-php-8.1-docker"
-    paths:
-      - packer/*/output-docker
-  variables:
-    _IMAGE: "php-8.1"
-    _PROVIDER: "docker"
-
-test:php-8.1-docker:
-  <<: *job-molecule-test
-  stage: test
-  cache:
-    key: "$CI_PIPELINE_ID-php-8.1-docker"
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: "php-8.1"
-    _PROVIDER: "docker"
-  needs:
-    - build:php-8.1-docker
-
-deploy:php-8.1-docker:
-  <<: *job-docker-push
-  stage: deploy
-  cache:
-    key: "$CI_PIPELINE_ID-php-8.1-docker"
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: "php-8.1"
-    _PROVIDER: "docker"
-  needs:
-    - test:php-8.1-docker
-
 build:php-8.0-fpm-docker:
   <<: *job-packer-build
   stage: build
@@ -251,45 +212,6 @@ deploy:php-8.0-fpm-docker:
   needs:
     - test:php-8.0-fpm-docker
 
-build:php-8.0-docker:
-  <<: *job-packer-build
-  stage: build
-  cache:
-    key: "$CI_PIPELINE_ID-php-8.0-docker"
-    paths:
-      - packer/*/output-docker
-  variables:
-    _IMAGE: "php-8.0"
-    _PROVIDER: "docker"
-
-test:php-8.0-docker:
-  <<: *job-molecule-test
-  stage: test
-  cache:
-    key: "$CI_PIPELINE_ID-php-8.0-docker"
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: "php-8.0"
-    _PROVIDER: "docker"
-  needs:
-    - build:php-8.0-docker
-
-deploy:php-8.0-docker:
-  <<: *job-docker-push
-  stage: deploy
-  cache:
-    key: "$CI_PIPELINE_ID-php-8.0-docker"
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: "php-8.0"
-    _PROVIDER: "docker"
-  needs:
-    - test:php-8.0-docker
-
 build:php-7.4-fpm-docker:
   <<: *job-packer-build
   stage: build
@@ -328,42 +250,3 @@ deploy:php-7.4-fpm-docker:
     _PROVIDER: "docker"
   needs:
     - test:php-7.4-fpm-docker
-
-build:php-7.4-docker:
-  <<: *job-packer-build
-  stage: build
-  cache:
-    key: "$CI_PIPELINE_ID-php-7.4-docker"
-    paths:
-      - packer/*/output-docker
-  variables:
-    _IMAGE: "php-7.4"
-    _PROVIDER: "docker"
-
-test:php-7.4-docker:
-  <<: *job-molecule-test
-  stage: test
-  cache:
-    key: "$CI_PIPELINE_ID-php-7.4-docker"
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: "php-7.4"
-    _PROVIDER: "docker"
-  needs:
-    - build:php-7.4-docker
-
-deploy:php-7.4-docker:
-  <<: *job-docker-push
-  stage: deploy
-  cache:
-    key: "$CI_PIPELINE_ID-php-7.4-docker"
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: "php-7.4"
-    _PROVIDER: "docker"
-  needs:
-    - test:php-7.4-docker

@@ -15,18 +15,18 @@
 # limitations under the License.
 
 namespace: alvistack
-name: php
-description: Docker Image Packaging for PHP
+name: php_fpm
+description: Docker Image Packaging for PHP-FPM
 
 version: 0.0.0
 readme: README.md
 license:
   - Apache-2.0
 
-repository: https://github.com/alvistack/docker-php
-documentation: https://github.com/alvistack/docker-php
-homepage: https://github.com/alvistack/docker-php
-issues: https://github.com/alvistack/docker-php/issues
+repository: https://github.com/alvistack/docker-php-fpm
+documentation: https://github.com/alvistack/docker-php-fpm
+homepage: https://github.com/alvistack/docker-php-fpm
+issues: https://github.com/alvistack/docker-php-fpm/issues
 
 dependencies: {}
 tags:

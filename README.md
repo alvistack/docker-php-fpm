@@ -1,11 +1,11 @@
-# Docker Image Packaging for PHP
+# Docker Image Packaging for PHP-FPM
 
 <a href="https://alvistack.com" title="AlviStack" target="_blank"><img src="/alvistack.svg" height="75" alt="AlviStack"></a>
 
-[![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-php/master)](https://gitlab.com/alvistack/docker-php/-/pipelines)
-[![GitHub tag](https://img.shields.io/github/tag/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/tags)
-[![GitHub license](https://img.shields.io/github/license/alvistack/docker-php.svg)](https://github.com/alvistack/docker-php/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/php-8.1.svg)](https://hub.docker.com/r/alvistack/php-8.1)
+[![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-php-fpm/master)](https://gitlab.com/alvistack/docker-php-fpm/-/pipelines)
+[![GitHub tag](https://img.shields.io/github/tag/alvistack/docker-php-fpm.svg)](https://github.com/alvistack/docker-php-fpm/tags)
+[![GitHub license](https://img.shields.io/github/license/alvistack/docker-php-fpm.svg)](https://github.com/alvistack/docker-php-fpm/blob/master/LICENSE)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/php-8.1-fpm.svg)](https://hub.docker.com/r/alvistack/php-8.1-fpm)
 
 PHP is a popular general-purpose scripting language that is especially suited to web development.
 
@@ -13,18 +13,12 @@ Learn more about PHP: <https://php.net/>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`alvistack/php-8.1`](https://hub.docker.com/r/alvistack/php-8.1)
-      - [`packer/docker-8.1/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-8.1/packer.json)
   - [`alvistack/php-8.1-fpm`](https://hub.docker.com/r/alvistack/php-8.1-fpm)
-      - [`packer/docker-8.1-fpm/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-8.1-fpm/packer.json)
-  - [`alvistack/php-8.0`](https://hub.docker.com/r/alvistack/php-8.0)
-      - [`packer/docker-8.0/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-8.0/packer.json)
+      - [`packer/docker-8.1-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.1-fpm/packer.json)
   - [`alvistack/php-8.0-fpm`](https://hub.docker.com/r/alvistack/php-8.0-fpm)
-      - [`packer/docker-8.0-fpm/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-8.0-fpm/packer.json)
-  - [`alvistack/php-7.4`](https://hub.docker.com/r/alvistack/php-7.4)
-      - [`packer/docker-7.4/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.4/packer.json)
+      - [`packer/docker-8.0-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.0-fpm/packer.json)
   - [`alvistack/php-7.4-fpm`](https://hub.docker.com/r/alvistack/php-7.4-fpm)
-      - [`packer/docker-7.4-fpm/packer.json`](https://github.com/alvistack/docker-php/blob/master/packer/docker-7.4-fpm/packer.json)
+      - [`packer/docker-7.4-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-7.4-fpm/packer.json)
 
 ## Overview
 
@@ -86,7 +80,7 @@ For the `VOLUME` directory that is used to store the repository data (amongst ot
 Start PHP:
 
     # Pull latest image
-    docker pull alvistack/php-8.1
+    docker pull alvistack/php-8.1-fpm
     
     # Run with built-in web server
     docker run \
@@ -94,7 +88,7 @@ Start PHP:
         --rm \
         --name php \
         --publish 8080:8080 \
-        alvistack/php-8.1 \
+        alvistack/php-8.1-fpm \
         php -S 0.0.0.0:8080 -t /var/www/html
 
 **Success**. PHP is now available on <http://localhost:8080/phpinfo.php>
@@ -103,11 +97,11 @@ Start PHP:
 
 ### `YYYYMMDD.Y.Z`
 
-Release tags could be find from [GitHub Release](https://github.com/alvistack/docker-php/tags) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
+Release tags could be find from [GitHub Release](https://github.com/alvistack/docker-php-fpm/tags) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
 
 ### `YYYYMMDD.0.0`
 
-Version tags ended with `.0.0` are rolling release rebuild by [GitLab pipeline](https://gitlab.com/alvistack/docker-php/-/pipelines) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
+Version tags ended with `.0.0` are rolling release rebuild by [GitLab pipeline](https://gitlab.com/alvistack/docker-php-fpm/-/pipelines) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
 
 ## License
 

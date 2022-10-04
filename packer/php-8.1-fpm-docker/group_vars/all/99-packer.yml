@@ -15,4 +15,3 @@
 # limitations under the License.
 
 php_release: "8.1"
-php_command: "php-fpm8.1"

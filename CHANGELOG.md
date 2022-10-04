@@ -1,8 +1,10 @@
-# Docker Image Packaging for PHP
+# Docker Image Packaging for PHP-FPM
 
 ## YYYYMMDD.Y.Z - TBC
 
 ### Major Changes
+
+  - Simplify with PHP-FPM only
 
 ## 20220915.1.1 - 2022-09-15
 
