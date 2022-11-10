@@ -13,12 +13,12 @@ Learn more about PHP: <https://php.net/>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`alvistack/php-8.1-fpm`](https://hub.docker.com/r/alvistack/php-8.1-fpm)
-      - [`packer/docker-8.1-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.1-fpm/packer.json)
-  - [`alvistack/php-8.0-fpm`](https://hub.docker.com/r/alvistack/php-8.0-fpm)
-      - [`packer/docker-8.0-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.0-fpm/packer.json)
-  - [`alvistack/php-7.4-fpm`](https://hub.docker.com/r/alvistack/php-7.4-fpm)
-      - [`packer/docker-7.4-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-7.4-fpm/packer.json)
+-   [`alvistack/php-8.1-fpm`](https://hub.docker.com/r/alvistack/php-8.1-fpm)
+    -   [`packer/docker-8.1-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.1-fpm/packer.json)
+-   [`alvistack/php-8.0-fpm`](https://hub.docker.com/r/alvistack/php-8.0-fpm)
+    -   [`packer/docker-8.0-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.0-fpm/packer.json)
+-   [`alvistack/php-7.4-fpm`](https://hub.docker.com/r/alvistack/php-7.4-fpm)
+    -   [`packer/docker-7.4-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-7.4-fpm/packer.json)
 
 ## Overview
 
@@ -26,52 +26,52 @@ This Docker container makes it easy to get an instance of PHP up and running.
 
 Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
-  - Packaging by Packer Docker builder and Ansible provisioner in single layer
-  - Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
-  - Change `User` and `Group` to `www-data`
-  - Change `DocumentRoot` to `/var/www/html`
-  - Additional PHP extensions:
-      - bcmath
-      - bz2
-      - calendar
-      - exif
-      - gd
-      - gettext
-      - iconv
-      - imap
-      - intl
-      - json
-      - ldap
-      - mbstring
-      - mysql
-      - mysqli
-      - opcache
-      - pcntl
-      - pdo\_mysql
-      - pdo\_pgsql
-      - pdo\_sqlite
-      - pgsql
-      - shmop
-      - simplexml
-      - soap
-      - sockets
-      - sysvmsg
-      - sysvsem
-      - sysvshm
-      - tidy
-      - wddx
-      - xml
-      - xmlrpc
-      - xsl
-      - zip
-  - Additional PECL extensions:
-      - apcu
-      - apcu\_bc
-      - geoip
-      - imagick
-      - memcached
-      - redis
-      - uuid
+-   Packaging by Packer Docker builder and Ansible provisioner in single layer
+-   Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
+-   Change `User` and `Group` to `www-data`
+-   Change `DocumentRoot` to `/var/www/html`
+-   Additional PHP extensions:
+    -   bcmath
+    -   bz2
+    -   calendar
+    -   exif
+    -   gd
+    -   gettext
+    -   iconv
+    -   imap
+    -   intl
+    -   json
+    -   ldap
+    -   mbstring
+    -   mysql
+    -   mysqli
+    -   opcache
+    -   pcntl
+    -   pdo_mysql
+    -   pdo_pgsql
+    -   pdo_sqlite
+    -   pgsql
+    -   shmop
+    -   simplexml
+    -   soap
+    -   sockets
+    -   sysvmsg
+    -   sysvsem
+    -   sysvshm
+    -   tidy
+    -   wddx
+    -   xml
+    -   xmlrpc
+    -   xsl
+    -   zip
+-   Additional PECL extensions:
+    -   apcu
+    -   apcu_bc
+    -   geoip
+    -   imagick
+    -   memcached
+    -   redis
+    -   uuid
 
 ### Quick Start
 
@@ -81,7 +81,7 @@ Start PHP:
 
     # Pull latest image
     docker pull alvistack/php-8.1-fpm
-    
+
     # Run with built-in web server
     docker run \
         -itd \
@@ -105,11 +105,11 @@ Version tags ended with `.0.0` are rolling release rebuild by [GitLab pipeline](
 
 ## License
 
-  - Code released under [Apache License 2.0](LICENSE)
-  - Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+-   Code released under [Apache License 2.0](LICENSE)
+-   Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Author Information
 
-  - Wong Hoi Sing Edison
-      - <https://twitter.com/hswong3i>
-      - <https://github.com/hswong3i>
+-   Wong Hoi Sing Edison
+    -   <https://twitter.com/hswong3i>
+    -   <https://github.com/hswong3i>
