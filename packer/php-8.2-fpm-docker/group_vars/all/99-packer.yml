@@ -14,4 +14,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-php_release: "7.4"
+php_release: "8.2"

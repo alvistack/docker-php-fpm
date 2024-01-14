@@ -2,6 +2,10 @@
 
 ## YYYYMMDD.Y.Z - TBC
 
+-   Support PHP 8.3
+-   Support PHP 8.2
+-   Remove PHP 8.0 support
+-   Remove PHP 7.4 support
 -   Remove Ubuntu 23.04 support
 
 ## 20231225.1.2 - 2023-12-25
