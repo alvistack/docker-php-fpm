@@ -1,5 +1,4 @@
 ---
-
 # Copyright 2024 Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +19,7 @@
   become: true
   tasks:
     - name: include default variables
-      ansible.builtin.include_vars: "./vars/main.yml"
+      ansible.builtin.include_vars: ./vars/main.yml
 
     - name: include release specific variables
       ansible.builtin.include_vars: "{{ _loop_var }}"
@@ -37,7 +36,7 @@
             - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
             - "{{ ansible_os_family | lower }}.yml"
           paths:
-            - "./vars"
+            - ./vars
           skip: true
 
     - name: include release specific tasks
@@ -55,11 +54,11 @@
             - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
             - "{{ ansible_os_family | lower }}.yml"
           paths:
-            - "./tasks"
+            - ./tasks
           skip: true
 
     - name: include default tasks
-      ansible.builtin.include_tasks: "./tasks/main.yml"
+      ansible.builtin.include_tasks: ./tasks/main.yml
 
     - name: include role
       ansible.builtin.include_role:
@@ -105,10 +104,10 @@
         mode: "{{ item.mode | default('0755') }}"
         state: "{{ item.state | default('directory') }}"
       loop:
-        - { dest: "/run/php", owner: "www-data", group: "www-data" }
-        - { dest: "/var/www/html", owner: "www-data", group: "www-data" }
+        - { dest: /run/php, owner: www-data, group: www-data }
+        - { dest: /var/www/html, owner: www-data, group: www-data }
 
-    - name: "prepare /etc/php/*"
+    - name: prepare /etc/php/*
       ansible.builtin.shell:
         cmd: |
           set -euxo pipefail
@@ -117,8 +116,8 @@
           ln -s ../fpm /etc/php/{{ php_release }}/
           ln -s ../mods-available /etc/php/{{ php_release }}/
       args:
-        executable: "/bin/bash"
-        creates: "/etc/php/mods-available"
+        executable: /bin/bash
+        creates: /etc/php/mods-available
       register: result
       until: result is succeeded
       changed_when: result is not succeeded
@@ -132,11 +131,11 @@
         mode: "{{ item.mode | default('0644') }}"
         backup: true
       loop:
-        - { dest: "/etc/php/cli/php.ini" }
-        - { dest: "/etc/php/fpm/php-fpm.conf" }
-        - { dest: "/etc/php/fpm/php.ini" }
-        - { dest: "/etc/php/fpm/pool.d/www.conf" }
-        - { dest: "/var/www/html/phpinfo.php" }
+        - { dest: /etc/php/cli/php.ini }
+        - { dest: /etc/php/fpm/php-fpm.conf }
+        - { dest: /etc/php/fpm/php.ini }
+        - { dest: /etc/php/fpm/pool.d/www.conf }
+        - { dest: /var/www/html/phpinfo.php }
 
     - name: prepare files
       ansible.builtin.file:
@@ -146,8 +145,8 @@
         mode: "{{ item.mode | default('0644') }}"
         state: "{{ item.state | default('file') }}"
       loop:
-        - { dest: "/etc/php/cli/php.ini" }
-        - { dest: "/etc/php/fpm/php-fpm.conf" }
-        - { dest: "/etc/php/fpm/php.ini" }
-        - { dest: "/etc/php/fpm/pool.d/www.conf" }
-        - { dest: "/var/www/html/phpinfo.php" }
+        - { dest: /etc/php/cli/php.ini }
+        - { dest: /etc/php/fpm/php-fpm.conf }
+        - { dest: /etc/php/fpm/php.ini }
+        - { dest: /etc/php/fpm/pool.d/www.conf }
+        - { dest: /var/www/html/phpinfo.php }
