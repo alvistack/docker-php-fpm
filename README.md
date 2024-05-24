@@ -18,12 +18,12 @@ Learn more about PHP: <https://php.net/>
 
 ## Supported Tags and Respective Packer Template Links
 
--   [`alvistack/php-8.3-fpm`](https://hub.docker.com/r/alvistack/php-8.3-fpm)
-    -   [`packer/docker-8.3-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.3-fpm/packer.json)
--   [`alvistack/php-8.2-fpm`](https://hub.docker.com/r/alvistack/php-8.2-fpm)
-    -   [`packer/docker-8.2-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.2-fpm/packer.json)
--   [`alvistack/php-8.1-fpm`](https://hub.docker.com/r/alvistack/php-8.1-fpm)
-    -   [`packer/docker-8.1-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.1-fpm/packer.json)
+- [`alvistack/php-8.3-fpm`](https://hub.docker.com/r/alvistack/php-8.3-fpm)
+  - [`packer/docker-8.3-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.3-fpm/packer.json)
+- [`alvistack/php-8.2-fpm`](https://hub.docker.com/r/alvistack/php-8.2-fpm)
+  - [`packer/docker-8.2-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.2-fpm/packer.json)
+- [`alvistack/php-8.1-fpm`](https://hub.docker.com/r/alvistack/php-8.1-fpm)
+  - [`packer/docker-8.1-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.1-fpm/packer.json)
 
 ## Overview
 
@@ -33,54 +33,54 @@ running.
 Based on [Official Ubuntu Docker
 Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
--   Packaging by Packer Docker builder and Ansible provisioner in single
-    layer
--   Handle `ENTRYPOINT` with
-    [catatonit](https://github.com/openSUSE/catatonit)
--   Change `User` and `Group` to `www-data`
--   Change `DocumentRoot` to `/var/www/html`
--   Additional PHP extensions:
-    -   bcmath
-    -   bz2
-    -   calendar
-    -   exif
-    -   gd
-    -   gettext
-    -   iconv
-    -   imap
-    -   intl
-    -   json
-    -   ldap
-    -   mbstring
-    -   mysql
-    -   mysqli
-    -   opcache
-    -   pcntl
-    -   pdo_mysql
-    -   pdo_pgsql
-    -   pdo_sqlite
-    -   pgsql
-    -   shmop
-    -   simplexml
-    -   soap
-    -   sockets
-    -   sysvmsg
-    -   sysvsem
-    -   sysvshm
-    -   tidy
-    -   wddx
-    -   xml
-    -   xmlrpc
-    -   xsl
-    -   zip
--   Additional PECL extensions:
-    -   apcu
-    -   apcu_bc
-    -   geoip
-    -   imagick
-    -   memcached
-    -   redis
-    -   uuid
+- Packaging by Packer Docker builder and Ansible provisioner in single
+  layer
+- Handle `ENTRYPOINT` with
+  [catatonit](https://github.com/openSUSE/catatonit)
+- Change `User` and `Group` to `www-data`
+- Change `DocumentRoot` to `/var/www/html`
+- Additional PHP extensions:
+  - bcmath
+  - bz2
+  - calendar
+  - exif
+  - gd
+  - gettext
+  - iconv
+  - imap
+  - intl
+  - json
+  - ldap
+  - mbstring
+  - mysql
+  - mysqli
+  - opcache
+  - pcntl
+  - pdo_mysql
+  - pdo_pgsql
+  - pdo_sqlite
+  - pgsql
+  - shmop
+  - simplexml
+  - soap
+  - sockets
+  - sysvmsg
+  - sysvsem
+  - sysvshm
+  - tidy
+  - wddx
+  - xml
+  - xmlrpc
+  - xsl
+  - zip
+- Additional PECL extensions:
+  - apcu
+  - apcu_bc
+  - geoip
+  - imagick
+  - memcached
+  - redis
+  - uuid
 
 ### Quick Start
 
@@ -123,12 +123,12 @@ latest packages provided by the base image project.
 
 ## License
 
--   Code released under [Apache License 2.0](LICENSE)
--   Docs released under [CC BY
-    4.0](http://creativecommons.org/licenses/by/4.0/)
+- Code released under [Apache License 2.0](LICENSE)
+- Docs released under [CC BY
+  4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Author Information
 
--   Wong Hoi Sing Edison
-    -   <https://twitter.com/hswong3i>
-    -   <https://github.com/hswong3i>
+- Wong Hoi Sing Edison
+  - <https://twitter.com/hswong3i>
+  - <https://github.com/hswong3i>
