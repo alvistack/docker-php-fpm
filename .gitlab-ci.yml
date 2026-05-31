@@ -134,6 +134,84 @@ default:
     - *script-git-submodule
     - *script-linters
 
+build:php-8.5-fpm-docker:
+  <<: *job-packer-build
+  stage: build
+  cache:
+    key: $CI_PIPELINE_ID-php-8.5-fpm-docker
+    paths:
+      - packer/*/output-docker
+  variables:
+    _IMAGE: php-8.5-fpm
+    _PROVIDER: docker
+
+test:php-8.5-fpm-docker:
+  <<: *job-molecule-test
+  stage: test
+  cache:
+    key: $CI_PIPELINE_ID-php-8.5-fpm-docker
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _IMAGE: php-8.5-fpm
+    _PROVIDER: docker
+  needs:
+    - build:php-8.5-fpm-docker
+
+deploy:php-8.5-fpm-docker:
+  <<: *job-docker-push
+  stage: deploy
+  cache:
+    key: $CI_PIPELINE_ID-php-8.5-fpm-docker
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _IMAGE: php-8.5-fpm
+    _PROVIDER: docker
+  needs:
+    - test:php-8.5-fpm-docker
+
+build:php-8.4-fpm-docker:
+  <<: *job-packer-build
+  stage: build
+  cache:
+    key: $CI_PIPELINE_ID-php-8.4-fpm-docker
+    paths:
+      - packer/*/output-docker
+  variables:
+    _IMAGE: php-8.4-fpm
+    _PROVIDER: docker
+
+test:php-8.4-fpm-docker:
+  <<: *job-molecule-test
+  stage: test
+  cache:
+    key: $CI_PIPELINE_ID-php-8.4-fpm-docker
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _IMAGE: php-8.4-fpm
+    _PROVIDER: docker
+  needs:
+    - build:php-8.4-fpm-docker
+
+deploy:php-8.4-fpm-docker:
+  <<: *job-docker-push
+  stage: deploy
+  cache:
+    key: $CI_PIPELINE_ID-php-8.4-fpm-docker
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _IMAGE: php-8.4-fpm
+    _PROVIDER: docker
+  needs:
+    - test:php-8.4-fpm-docker
+
 build:php-8.3-fpm-docker:
   <<: *job-packer-build
   stage: build
@@ -172,81 +250,3 @@ deploy:php-8.3-fpm-docker:
     _PROVIDER: docker
   needs:
     - test:php-8.3-fpm-docker
-
-build:php-8.2-fpm-docker:
-  <<: *job-packer-build
-  stage: build
-  cache:
-    key: $CI_PIPELINE_ID-php-8.2-fpm-docker
-    paths:
-      - packer/*/output-docker
-  variables:
-    _IMAGE: php-8.2-fpm
-    _PROVIDER: docker
-
-test:php-8.2-fpm-docker:
-  <<: *job-molecule-test
-  stage: test
-  cache:
-    key: $CI_PIPELINE_ID-php-8.2-fpm-docker
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: php-8.2-fpm
-    _PROVIDER: docker
-  needs:
-    - build:php-8.2-fpm-docker
-
-deploy:php-8.2-fpm-docker:
-  <<: *job-docker-push
-  stage: deploy
-  cache:
-    key: $CI_PIPELINE_ID-php-8.2-fpm-docker
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: php-8.2-fpm
-    _PROVIDER: docker
-  needs:
-    - test:php-8.2-fpm-docker
-
-build:php-8.1-fpm-docker:
-  <<: *job-packer-build
-  stage: build
-  cache:
-    key: $CI_PIPELINE_ID-php-8.1-fpm-docker
-    paths:
-      - packer/*/output-docker
-  variables:
-    _IMAGE: php-8.1-fpm
-    _PROVIDER: docker
-
-test:php-8.1-fpm-docker:
-  <<: *job-molecule-test
-  stage: test
-  cache:
-    key: $CI_PIPELINE_ID-php-8.1-fpm-docker
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: php-8.1-fpm
-    _PROVIDER: docker
-  needs:
-    - build:php-8.1-fpm-docker
-
-deploy:php-8.1-fpm-docker:
-  <<: *job-docker-push
-  stage: deploy
-  cache:
-    key: $CI_PIPELINE_ID-php-8.1-fpm-docker
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: php-8.1-fpm
-    _PROVIDER: docker
-  needs:
-    - test:php-8.1-fpm-docker
