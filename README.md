@@ -9,7 +9,7 @@ tag](https://img.shields.io/github/tag/alvistack/docker-php-fpm.svg)](https://gi
 [![GitHub
 license](https://img.shields.io/github/license/alvistack/docker-php-fpm.svg)](https://github.com/alvistack/docker-php-fpm/blob/master/LICENSE)
 [![Docker
-Pulls](https://img.shields.io/docker/pulls/alvistack/php-8.3-fpm.svg)](https://hub.docker.com/r/alvistack/php-8.3-fpm)
+Pulls](https://img.shields.io/docker/pulls/alvistack/php-8.5-fpm.svg)](https://hub.docker.com/r/alvistack/php-8.5-fpm)
 
 PHP is a popular general-purpose scripting language that is especially
 suited to web development.
@@ -18,12 +18,12 @@ Learn more about PHP: <https://php.net/>
 
 ## Supported Tags and Respective Packer Template Links
 
+- [`alvistack/php-8.5-fpm`](https://hub.docker.com/r/alvistack/php-8.5-fpm)
+  - [`packer/docker-8.5-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.5-fpm/packer.json)
+- [`alvistack/php-8.4-fpm`](https://hub.docker.com/r/alvistack/php-8.4-fpm)
+  - [`packer/docker-8.4-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.4-fpm/packer.json)
 - [`alvistack/php-8.3-fpm`](https://hub.docker.com/r/alvistack/php-8.3-fpm)
   - [`packer/docker-8.3-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.3-fpm/packer.json)
-- [`alvistack/php-8.2-fpm`](https://hub.docker.com/r/alvistack/php-8.2-fpm)
-  - [`packer/docker-8.2-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.2-fpm/packer.json)
-- [`alvistack/php-8.1-fpm`](https://hub.docker.com/r/alvistack/php-8.1-fpm)
-  - [`packer/docker-8.1-fpm/packer.json`](https://github.com/alvistack/docker-php-fpm/blob/master/packer/docker-8.1-fpm/packer.json)
 
 ## Overview
 
@@ -92,7 +92,7 @@ or via a named volume if using a docker version \>= 1.9.
 Start PHP:
 
     # Pull latest image
-    docker pull alvistack/php-8.3-fpm
+    docker pull alvistack/php-8.5-fpm
 
     # Run with built-in web server
     docker run \
@@ -100,7 +100,7 @@ Start PHP:
         --rm \
         --name php \
         --publish 8080:8080 \
-        alvistack/php-8.3-fpm \
+        alvistack/php-8.5-fpm \
         php -S 0.0.0.0:8080 -t /var/www/html
 
 **Success**. PHP is now available on <http://localhost:8080/phpinfo.php>
